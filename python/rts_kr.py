@@ -180,7 +180,7 @@ class Ui_MainWindow(object):
         self.mirrorwar_menu.setObjectName("mirrorwar_menu")
         self.verticalLayout.addWidget(self.mirrorwar_menu)
         self.atrox_menu = QtWidgets.QPushButton(self.verticalLayoutWidget)
-        self.atrox_menu.setEnabled(False)
+        self.atrox_menu.setEnabled(True)
         icon6 = QtGui.QIcon()
         icon6.addPixmap(QtGui.QPixmap(".\\Atrox_107.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.atrox_menu.setIcon(icon6)
@@ -651,14 +651,65 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menu.menuAction())
         self.menubar.addAction(self.menu_2.menuAction())
 
-        def JURASSIC_FRAME(self) :
+        def JURASSIC_FRAME() :
             print("쥬라기원시전")
+            self.kuf_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
+            self.mirror_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
+            self.newmyth_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
+            self.imjinrok_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
+            self.atrox_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
+            self.jurrasic_frame.setGeometry(QtCore.QRect(250, 65, 491, 321))
+        def KUF_FRAME() :
+            print("킹덤언더파이어")
             self.kuf_frame.setGeometry(QtCore.QRect(250, 65, 491, 321))
-
-        
+            self.mirror_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
+            self.newmyth_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
+            self.imjinrok_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
+            self.atrox_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
+            self.jurrasic_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
+        def IMJINROK_FRAME() :
+            print("조선의반격")
+            self.kuf_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
+            self.mirror_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
+            self.newmyth_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
+            self.imjinrok_frame.setGeometry(QtCore.QRect(250, 65, 491, 321))
+            self.atrox_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
+            self.jurrasic_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
+        def NEWMYTH_FRAME() :
+            print("신천년의신화")
+            self.kuf_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
+            self.mirror_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
+            self.newmyth_frame.setGeometry(QtCore.QRect(250, 65, 491, 321))
+            self.imjinrok_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
+            self.atrox_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
+            self.jurrasic_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
+        def MIRRORWAR_FRAME() :
+            print("거울전쟁")
+            self.kuf_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
+            self.mirror_frame.setGeometry(QtCore.QRect(250, 65, 491, 321))
+            self.newmyth_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
+            self.imjinrok_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
+            self.atrox_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
+            self.jurrasic_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
+        def ATROX_FRAME() :
+            print("조선의반격")
+            self.kuf_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
+            self.mirror_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
+            self.newmyth_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
+            self.imjinrok_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
+            self.atrox_frame.setGeometry(QtCore.QRect(250, 65, 491, 321))
+            self.jurrasic_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
+            
+            
             
 
+        
+        self.kuf_menu.clicked.connect(KUF_FRAME)
         self.jurassic_menu.clicked.connect(JURASSIC_FRAME)
+        self.imjinrok_menu.clicked.connect(IMJINROK_FRAME)
+        self.newmyth_menu.clicked.connect(NEWMYTH_FRAME)
+        self.mirrorwar_menu.clicked.connect(MIRRORWAR_FRAME)
+        self.atrox_menu.clicked.connect(ATROX_FRAME)
 
         
 
@@ -877,12 +928,7 @@ if __name__ == "__main__":
 
     sys.exit(app.exec_())
 
-    def JURASSIC_FRAME(self) :
-            print("쥬라기원시전")
-            ui.kuf_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
-
-
-    ui.jurassic_menu.clicked.connect(JURASSIC_FRAME)
+    
     
 
     

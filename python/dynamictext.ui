@@ -1,0 +1,2353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1465</width>
+    <height>1180</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>RTS.KR_1.00</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>그림1.jpg</normaloff>그림1.jpg</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>-20</y>
+      <width>20</width>
+      <height>451</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QFrame" name="kuf_frame">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>65</y>
+      <width>491</width>
+      <height>321</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>104</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>다운로드&amp;&amp; 패치</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QPushButton" name="kuf_down">
+        <property name="text">
+         <string>다운로드</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="kuf_gold">
+        <property name="text">
+         <string>골드패치</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="kuf_original">
+        <property name="text">
+         <string>오리지널 패치</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>150</y>
+       <width>451</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>전적 업데이트</string>
+     </property>
+     <widget class="QPushButton" name="kuf_update">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>14</y>
+        <width>101</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>업데이트</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="kuf_myrace">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>20</y>
+        <width>76</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>휴먼</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>데빌</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLineEdit" name="kuf_myname">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>20</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="kuf_yourname">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>50</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="kuf_yourace">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>50</y>
+        <width>76</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>휴먼</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>데빌</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>상대방</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="text">
+       <string>나</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="kuf_win">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>30</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="tabletTracking">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>승리</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="kuf_lose">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>60</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>패배</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>대전맵</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="kuf_map">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>80</y>
+        <width>166</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>타우크로스</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>데스티네이션</string>
+       </property>
+      </item>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>10</y>
+       <width>341</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>웹 사이트</string>
+     </property>
+     <widget class="QPushButton" name="kuf_rank">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>71</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>전적기록실</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="kuf_cafe">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>30</y>
+        <width>75</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>커뮤니티</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="kuf_balance">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>30</y>
+        <width>71</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>유닛 상성표</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="kuf_hnor">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>30</y>
+        <width>71</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::WheelFocus</enum>
+      </property>
+      <property name="text">
+       <string>명예전당
+자료실</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="kuf_kakao">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>72</y>
+        <width>75</width>
+        <height>39</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>카카오톡
+오픈채팅방</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="kuf_start">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>270</y>
+       <width>451</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>KUF 게임실행</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>KingdomUnderFire_128.ico</normaloff>KingdomUnderFire_128.ico</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>30</width>
+       <height>30</height>
+      </size>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>181</width>
+      <height>371</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="spacing">
+      <number>6</number>
+     </property>
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="kuf_menu_2">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="tabletTracking">
+        <bool>false</bool>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>서네떡의 전략시뮬이션</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>그림1.jpg</normaloff>그림1.jpg</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="kuf_menu">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="tabletTracking">
+        <bool>false</bool>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>킹덤언더파이어</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>KingdomUnderFire_128.ico</normaloff>KingdomUnderFire_128.ico</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="jurassic_menu">
+       <property name="text">
+        <string>쥬라기원시전2:더랭커</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>NoCD_TheRanker_1_101.ico</normaloff>NoCD_TheRanker_1_101.ico</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="imjinrok_menu">
+       <property name="text">
+        <string>임진록2+:조선의반격</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>뙉뷥_207.ico</normaloff>뙉뷥_207.ico</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="newmyth_menu">
+       <property name="text">
+        <string>신 천년의신화</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>뙉뷥_1_207.ico</normaloff>뙉뷥_1_207.ico</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="mirrorwar_menu">
+       <property name="text">
+        <string>거울전쟁:은의여인</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>Mirror war_101.ico</normaloff>Mirror war_101.ico</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="atrox_menu">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>아트록스</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>Atrox_107.ico</normaloff>Atrox_107.ico</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QFrame" name="imjinrok_frame">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>780</x>
+      <y>60</y>
+      <width>491</width>
+      <height>321</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>104</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>다운로드&amp;&amp; 패치</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QPushButton" name="imjinrok_down">
+        <property name="text">
+         <string>다운로드</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="imjinrok_path">
+        <property name="text">
+         <string>실행 경로설정</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="imjinrok_eslpatch">
+        <property name="text">
+         <string>ESL1.4패치</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="imjinrok_jmpatch">
+        <property name="text">
+         <string>JM 1.8패치</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_5">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>150</y>
+       <width>451</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>전적 업데이트</string>
+     </property>
+     <widget class="QPushButton" name="imjinrok_update">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>14</y>
+        <width>101</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>업데이트</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="imjinrok_myrace">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>20</y>
+        <width>76</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>조선</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>일본</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>명</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLineEdit" name="imjinrok_myname">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>20</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="imjinrok_yourname">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>50</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="imjinrok_yourace">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>50</y>
+        <width>76</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>조선</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>일본</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>명</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>상대방</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="text">
+       <string>나</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="imjinrok_win">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>30</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="tabletTracking">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>승리</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="imjinrok_lose">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>60</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>패배</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>대전맵</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="imjinrok_map">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>80</y>
+        <width>166</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>타우크로스</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>데스티네이션</string>
+       </property>
+      </item>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_6">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>10</y>
+       <width>341</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>웹 사이트</string>
+     </property>
+     <widget class="QPushButton" name="imjinrok_rank">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>71</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>전적기록실</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="imjinrok_cafe">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>30</y>
+        <width>71</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>커뮤니티</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="imjinrok_skin">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>30</y>
+        <width>71</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>임진록 스킨
+다운로드</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="imjinrok_kakao">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>28</y>
+        <width>71</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>카카오톡
+오픈채팅방</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="imjinrok_start">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>270</y>
+       <width>451</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>임진록2+조선의반격 게임실행</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>뙉뷥_207.ico</normaloff>뙉뷥_207.ico</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>30</width>
+       <height>30</height>
+      </size>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="newmyth_frame">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>400</y>
+      <width>491</width>
+      <height>321</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QGroupBox" name="groupBox_10">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>104</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>다운로드&amp;&amp; 패치</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_5">
+      <item>
+       <widget class="QPushButton" name="newmyth_down">
+        <property name="text">
+         <string>다운로드</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="newmyth_path">
+        <property name="text">
+         <string>실행 경로설정</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_11">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>150</y>
+       <width>451</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>전적 업데이트</string>
+     </property>
+     <widget class="QPushButton" name="newmyth_update">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>14</y>
+        <width>101</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>업데이트</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="newmyth_myrace">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>20</y>
+        <width>76</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>고구려</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>백제</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>신라</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLineEdit" name="newmyth_myname">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>20</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="newmyth_yourname">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>50</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="newmyth_yourace">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>50</y>
+        <width>76</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>고구려</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>백제</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>신라</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_14">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>상대방</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_15">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="text">
+       <string>나</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="newmyth_win">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>30</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="tabletTracking">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>승리</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="newmyth_lose">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>60</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>패배</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_16">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>대전맵</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="newmyth_map">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>80</y>
+        <width>166</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>타우크로스</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>데스티네이션</string>
+       </property>
+      </item>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_12">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>10</y>
+       <width>341</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>웹 사이트</string>
+     </property>
+     <widget class="QPushButton" name="newmyth_rank">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>91</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>전적기록실</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="newmyth_kakao_2">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>30</y>
+        <width>101</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>카카오톡
+오픈채팅방</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="newmyth_cafe">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>30</y>
+        <width>101</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>커뮤니티</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="newmyth_start">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>270</y>
+       <width>451</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>신 천년의신화 게임실행</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>뙉뷥_1_207.ico</normaloff>뙉뷥_1_207.ico</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>30</width>
+       <height>30</height>
+      </size>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="mirror_frame">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>780</x>
+      <y>402</y>
+      <width>491</width>
+      <height>321</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QGroupBox" name="groupBox_13">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>104</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>다운로드&amp;&amp; 패치</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_6">
+      <item>
+       <widget class="QPushButton" name="mirrorwar_down">
+        <property name="text">
+         <string>다운로드</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="mirrorwar_path">
+        <property name="text">
+         <string>실행 경로설정</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_14">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>150</y>
+       <width>451</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>전적 업데이트</string>
+     </property>
+     <widget class="QPushButton" name="mirrorwar_update">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>14</y>
+        <width>101</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>업데이트</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="mirrorwar_myrace">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>20</y>
+        <width>76</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>해방군</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>악령군</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>흑마술파</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLineEdit" name="mirrorwar_myname">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>20</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="mirrorwar_yourname">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>50</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="mirrorwar_yourace">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>50</y>
+        <width>76</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>해방군</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>악령군</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>흑마술파</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_18">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>상대방</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_19">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="text">
+       <string>나</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="kuf_win_5">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>30</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="tabletTracking">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>승리</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="kuf_lose_5">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>60</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>패배</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_20">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>대전맵</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="mirrorwar_map">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>80</y>
+        <width>166</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>타우크로스</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>데스티네이션</string>
+       </property>
+      </item>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_15">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>10</y>
+       <width>341</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>웹 사이트</string>
+     </property>
+     <widget class="QPushButton" name="mirrorwar_rank">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>91</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>전적기록실</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="mirrorwar_cafe">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>30</y>
+        <width>101</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>커뮤니티</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="mirrorwar_kakao">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>30</y>
+        <width>101</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>카카오톡
+오픈채팅방</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="mirrorwar_start">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>270</y>
+       <width>451</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>거울전쟁:은의여인 게임실행</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>Mirror war_101.ico</normaloff>Mirror war_101.ico</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>30</width>
+       <height>30</height>
+      </size>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="jurrasic_frame">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>760</y>
+      <width>491</width>
+      <height>321</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QGroupBox" name="groupBox_16">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>104</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>다운로드&amp;&amp; 패치</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_7">
+      <item>
+       <widget class="QPushButton" name="jurassic_down">
+        <property name="text">
+         <string>다운로드</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="jurassic_path">
+        <property name="text">
+         <string>실행 경로설정</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_17">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>150</y>
+       <width>451</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>전적 업데이트</string>
+     </property>
+     <widget class="QPushButton" name="kuf_update_6">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>14</y>
+        <width>101</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>업데이트</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="kuf_myrace_6">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>20</y>
+        <width>76</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>원시인</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>티라노</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>엘프</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>데몬</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLineEdit" name="kuf_myname_6">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>20</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="kuf_yourname_6">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>50</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="kuf_yourace_6">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>50</y>
+        <width>76</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>원시인</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>티라노</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>엘프</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>데몬</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_22">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>상대방</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_23">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="text">
+       <string>나</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="kuf_win_6">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>30</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="tabletTracking">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>승리</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="kuf_lose_6">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>60</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>패배</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_24">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>대전맵</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="kuf_map_6">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>80</y>
+        <width>166</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>타우크로스</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>데스티네이션</string>
+       </property>
+      </item>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_18">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>10</y>
+       <width>341</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>웹 사이트</string>
+     </property>
+     <widget class="QPushButton" name="jurassic_rank">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>71</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>전적기록실</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="jurassic_cafe">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>30</y>
+        <width>75</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>커뮤니티</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="jurassic_balance">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>30</y>
+        <width>71</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>유닛 상성표</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="jurassic_hnor">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>30</y>
+        <width>71</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::WheelFocus</enum>
+      </property>
+      <property name="text">
+       <string>명예전당</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="jurassic_kakao">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>72</y>
+        <width>75</width>
+        <height>39</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>카카오톡
+오픈채팅방</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="kuf_start_6">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>270</y>
+       <width>451</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>쥬라기원시전2:더랭커 게임실행</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>NoCD_TheRanker_1_101.ico</normaloff>NoCD_TheRanker_1_101.ico</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>30</width>
+       <height>30</height>
+      </size>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="atrox_frame">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>780</x>
+      <y>760</y>
+      <width>491</width>
+      <height>321</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QGroupBox" name="groupBox_19">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>104</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>다운로드&amp;&amp; 패치</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_8">
+      <item>
+       <widget class="QPushButton" name="atrox_down">
+        <property name="text">
+         <string>다운로드</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="atrox_path">
+        <property name="text">
+         <string>실행 경로설정</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_20">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>150</y>
+       <width>451</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>전적 업데이트</string>
+     </property>
+     <widget class="QPushButton" name="atrox_update">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>14</y>
+        <width>101</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>업데이트</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="atrox_myrace">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>20</y>
+        <width>76</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>호미니언</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>인텔리언</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>크리티스</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLineEdit" name="atrox_myname">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>20</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="atrox_yourname">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>50</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="atrox_yourace">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>50</y>
+        <width>76</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>호미니언</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>인텔리언</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>크리티스</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_26">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>상대방</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_27">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="text">
+       <string>나</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="atrox_win">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>30</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="tabletTracking">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>승리</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="atrox_lose">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>60</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>패배</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_28">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>대전맵</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="atrox_map">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>80</y>
+        <width>166</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>타우크로스</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>데스티네이션</string>
+       </property>
+      </item>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_21">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>10</y>
+       <width>341</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>웹 사이트</string>
+     </property>
+     <widget class="QPushButton" name="atrox_rank">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>71</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>전적기록실</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="atrox_cafe">
+      <property name="geometry">
+       <rect>
+        <x>84</x>
+        <y>30</y>
+        <width>161</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>커뮤니티</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="atrox_balance">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>30</y>
+        <width>71</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>유닛 상성표</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="atrox_kakao">
+      <property name="geometry">
+       <rect>
+        <x>84</x>
+        <y>72</y>
+        <width>161</width>
+        <height>39</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>카카오톡
+오픈채팅방</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="atrox_start">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>270</y>
+       <width>451</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>아트록스 게임실행</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>Atrox_107.ico</normaloff>Atrox_107.ico</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>30</width>
+       <height>30</height>
+      </size>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>40</y>
+      <width>113</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="kuf_ip_2">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>40</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="text">
+     <string>25.266.222.222</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="kuf_ip_4">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>40</y>
+      <width>41</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="text">
+     <string>닉네임</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1465</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>설정</string>
+    </property>
+    <addaction name="nikanme_action"/>
+    <addaction name="launcherexit_action"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>기타</string>
+    </property>
+    <addaction name="laucherupdate_action"/>
+    <addaction name="launcherinfo_action"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="launcherexit_action">
+   <property name="text">
+    <string>종료</string>
+   </property>
+  </action>
+  <action name="launcherinfo_action">
+   <property name="text">
+    <string>프로그램 정보</string>
+   </property>
+  </action>
+  <action name="nikanme_action">
+   <property name="text">
+    <string>닉네임 설정</string>
+   </property>
+  </action>
+  <action name="laucherupdate_action">
+   <property name="text">
+    <string>업데이트 확인</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>kuf_menu</tabstop>
+  <tabstop>jurassic_menu</tabstop>
+  <tabstop>imjinrok_menu</tabstop>
+  <tabstop>newmyth_menu</tabstop>
+  <tabstop>mirrorwar_menu</tabstop>
+  <tabstop>atrox_menu</tabstop>
+  <tabstop>kuf_yourname</tabstop>
+  <tabstop>kuf_yourace</tabstop>
+  <tabstop>kuf_win</tabstop>
+  <tabstop>kuf_lose</tabstop>
+  <tabstop>kuf_map</tabstop>
+  <tabstop>kuf_rank</tabstop>
+  <tabstop>kuf_cafe</tabstop>
+  <tabstop>kuf_balance</tabstop>
+  <tabstop>kuf_hnor</tabstop>
+  <tabstop>kuf_kakao</tabstop>
+  <tabstop>kuf_start</tabstop>
+  <tabstop>kuf_down</tabstop>
+  <tabstop>kuf_gold</tabstop>
+  <tabstop>kuf_original</tabstop>
+  <tabstop>kuf_update</tabstop>
+  <tabstop>kuf_myrace</tabstop>
+  <tabstop>kuf_myname</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>lineEdit</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>kuf_myname</receiver>
+   <slot>setText(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>577</x>
+     <y>77</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>263</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>kuf_slot()</slot>
+  <slot>jurassic_slot()</slot>
+  <slot>imjinrok_slot()</slot>
+  <slot>newmyth_slot()</slot>
+  <slot>mirrorwar_slot()</slot>
+  <slot>atrox_slot()</slot>
+ </slots>
+</ui>

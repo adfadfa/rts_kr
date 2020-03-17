@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '.\rts_kr.ui'
+# Form implementation generated from reading ui file '.\dynamictext.ui'
 #
 # Created by: PyQt5 UI code generator 5.14.1
 #
@@ -8,43 +8,14 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import socket
-import webbrowser
-import pyperclip
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
 
-
-def ipcheck():
-    	return socket.gethostbyname(socket.getfqdn())
-
-myip = ipcheck()
-
-#######전적 관리시스템###########
-scope = [
-'https://spreadsheets.google.com/feeds',
-'https://www.googleapis.com/auth/drive',
-]
-json_file_name = 'C:\\Users\seo\Downloads\mobile-master\python\kufrankingsystem-281378b273ea.json'
-credentials = ServiceAccountCredentials.from_json_keyfile_name(json_file_name, scope)
-gc = gspread.authorize(credentials)
-kuf_spreadsheeturl = 'https://docs.google.com/spreadsheets/d/1Dy-9UaCfiKm5hv_dpv7EvpMoGe6LjAVHqvgsWYSmG8c/edit#gid=0'
-# 스프레스시트 문서 가져오기 
-doc = gc.open_by_url(kuf_spreadsheeturl)
-# 시트 선택하기
-kuf_worksheet_rank = doc.worksheet('랭킹')
-kuf_worksheet_stat = doc.worksheet('통계')
-
-kuf_maplist = kuf_worksheet_stat.range('A2:A100') #맵리스트 범위 지정
-
-print(kuf_maplist)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.setFixedSize(752, 436)
+        MainWindow.resize(1465, 1180)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("C:\\Users\\seo\\AndroidStudioProjects\\rts_kr\\python\\그림1.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(".\\그림1.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -86,10 +57,8 @@ class Ui_MainWindow(object):
         self.kuf_myrace.addItem("")
         self.kuf_myname = QtWidgets.QLineEdit(self.groupBox)
         self.kuf_myname.setGeometry(QtCore.QRect(60, 20, 91, 20))
+        self.kuf_myname.setText("")
         self.kuf_myname.setObjectName("kuf_myname")
-
-        
-        
         self.kuf_yourname = QtWidgets.QLineEdit(self.groupBox)
         self.kuf_yourname.setGeometry(QtCore.QRect(60, 50, 91, 20))
         self.kuf_yourname.setObjectName("kuf_yourname")
@@ -119,11 +88,8 @@ class Ui_MainWindow(object):
         self.kuf_map = QtWidgets.QComboBox(self.groupBox)
         self.kuf_map.setGeometry(QtCore.QRect(70, 80, 166, 22))
         self.kuf_map.setObjectName("kuf_map")
-        for cell in kuf_maplist:
-            if cell.value == '':
-                break
-            self.kuf_map.addItem("")
-        
+        self.kuf_map.addItem("")
+        self.kuf_map.addItem("")
         self.groupBox_3 = QtWidgets.QGroupBox(self.kuf_frame)
         self.groupBox_3.setGeometry(QtCore.QRect(130, 10, 341, 131))
         self.groupBox_3.setObjectName("groupBox_3")
@@ -146,7 +112,7 @@ class Ui_MainWindow(object):
         self.kuf_start = QtWidgets.QPushButton(self.kuf_frame)
         self.kuf_start.setGeometry(QtCore.QRect(20, 270, 451, 41))
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("C:\\Users\\seo\\AndroidStudioProjects\\rts_kr\python\\KingdomUnderFire_128.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap(".\\KingdomUnderFire_128.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.kuf_start.setIcon(icon1)
         self.kuf_start.setIconSize(QtCore.QSize(30, 30))
         self.kuf_start.setObjectName("kuf_start")
@@ -157,20 +123,20 @@ class Ui_MainWindow(object):
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setSpacing(6)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.seo_menu = QtWidgets.QPushButton(self.verticalLayoutWidget)
-        self.seo_menu.setEnabled(True)
+        self.kuf_menu_2 = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.kuf_menu_2.setEnabled(True)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.seo_menu.sizePolicy().hasHeightForWidth())
-        self.seo_menu.setSizePolicy(sizePolicy)
-        self.seo_menu.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.seo_menu.setTabletTracking(False)
-        self.seo_menu.setAutoFillBackground(False)
-        self.seo_menu.setIcon(icon)
-        self.seo_menu.setIconSize(QtCore.QSize(30, 30))
-        self.seo_menu.setObjectName("seo_menu")
-        self.verticalLayout.addWidget(self.seo_menu)
+        sizePolicy.setHeightForWidth(self.kuf_menu_2.sizePolicy().hasHeightForWidth())
+        self.kuf_menu_2.setSizePolicy(sizePolicy)
+        self.kuf_menu_2.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.kuf_menu_2.setTabletTracking(False)
+        self.kuf_menu_2.setAutoFillBackground(False)
+        self.kuf_menu_2.setIcon(icon)
+        self.kuf_menu_2.setIconSize(QtCore.QSize(30, 30))
+        self.kuf_menu_2.setObjectName("kuf_menu_2")
+        self.verticalLayout.addWidget(self.kuf_menu_2)
         self.kuf_menu = QtWidgets.QPushButton(self.verticalLayoutWidget)
         self.kuf_menu.setEnabled(True)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
@@ -187,36 +153,36 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.kuf_menu)
         self.jurassic_menu = QtWidgets.QPushButton(self.verticalLayoutWidget)
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("C:\\Users\\seo\\AndroidStudioProjects\\rts_kr\\python\\NoCD_TheRanker_1_101.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap(".\\NoCD_TheRanker_1_101.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.jurassic_menu.setIcon(icon2)
         self.jurassic_menu.setIconSize(QtCore.QSize(30, 30))
         self.jurassic_menu.setObjectName("jurassic_menu")
         self.verticalLayout.addWidget(self.jurassic_menu)
         self.imjinrok_menu = QtWidgets.QPushButton(self.verticalLayoutWidget)
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("C:\\Users\\seo\\AndroidStudioProjects\\rts_kr\\python\\뙉뷥_207.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon3.addPixmap(QtGui.QPixmap(".\\뙉뷥_207.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.imjinrok_menu.setIcon(icon3)
         self.imjinrok_menu.setIconSize(QtCore.QSize(30, 30))
         self.imjinrok_menu.setObjectName("imjinrok_menu")
         self.verticalLayout.addWidget(self.imjinrok_menu)
         self.newmyth_menu = QtWidgets.QPushButton(self.verticalLayoutWidget)
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("C:\\Users\\seo\\AndroidStudioProjects\\rts_kr\\python\\뙉뷥_1_207.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon4.addPixmap(QtGui.QPixmap(".\\뙉뷥_1_207.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.newmyth_menu.setIcon(icon4)
         self.newmyth_menu.setIconSize(QtCore.QSize(30, 30))
         self.newmyth_menu.setObjectName("newmyth_menu")
         self.verticalLayout.addWidget(self.newmyth_menu)
         self.mirrorwar_menu = QtWidgets.QPushButton(self.verticalLayoutWidget)
         icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap("C:\\Users\\seo\\AndroidStudioProjects\\rts_kr\\python\\Mirror war_101.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon5.addPixmap(QtGui.QPixmap(".\\Mirror war_101.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.mirrorwar_menu.setIcon(icon5)
         self.mirrorwar_menu.setIconSize(QtCore.QSize(30, 30))
         self.mirrorwar_menu.setObjectName("mirrorwar_menu")
         self.verticalLayout.addWidget(self.mirrorwar_menu)
         self.atrox_menu = QtWidgets.QPushButton(self.verticalLayoutWidget)
-        self.atrox_menu.setEnabled(True)
+        self.atrox_menu.setEnabled(False)
         icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap("C:\\Users\\seo\\AndroidStudioProjects\\rts_kr\\python\\Atrox_107.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon6.addPixmap(QtGui.QPixmap(".\\Atrox_107.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.atrox_menu.setIcon(icon6)
         self.atrox_menu.setIconSize(QtCore.QSize(30, 30))
         self.atrox_menu.setObjectName("atrox_menu")
@@ -493,29 +459,29 @@ class Ui_MainWindow(object):
         self.groupBox_17 = QtWidgets.QGroupBox(self.jurrasic_frame)
         self.groupBox_17.setGeometry(QtCore.QRect(20, 150, 451, 111))
         self.groupBox_17.setObjectName("groupBox_17")
-        self.jurassic_update = QtWidgets.QPushButton(self.groupBox_17)
-        self.jurassic_update.setGeometry(QtCore.QRect(330, 14, 101, 91))
-        self.jurassic_update.setObjectName("jurassic_update")
-        self.jurassic_myrace = QtWidgets.QComboBox(self.groupBox_17)
-        self.jurassic_myrace.setGeometry(QtCore.QRect(160, 20, 76, 22))
-        self.jurassic_myrace.setObjectName("jurassic_myrace")
-        self.jurassic_myrace.addItem("")
-        self.jurassic_myrace.addItem("")
-        self.jurassic_myrace.addItem("")
-        self.jurassic_myrace.addItem("")
-        self.jurassic_myname = QtWidgets.QLineEdit(self.groupBox_17)
-        self.jurassic_myname.setGeometry(QtCore.QRect(60, 20, 91, 20))
-        self.jurassic_myname.setObjectName("kuf_myname_6")
-        self.jurassic_yourname = QtWidgets.QLineEdit(self.groupBox_17)
-        self.jurassic_yourname.setGeometry(QtCore.QRect(60, 50, 91, 20))
-        self.jurassic_yourname.setObjectName("jurassic_yourname")
-        self.jurassic_yourace = QtWidgets.QComboBox(self.groupBox_17)
-        self.jurassic_yourace.setGeometry(QtCore.QRect(160, 50, 76, 22))
-        self.jurassic_yourace.setObjectName("jurassic_yourace")
-        self.jurassic_yourace.addItem("")
-        self.jurassic_yourace.addItem("")
-        self.jurassic_yourace.addItem("")
-        self.jurassic_yourace.addItem("")
+        self.kuf_update_6 = QtWidgets.QPushButton(self.groupBox_17)
+        self.kuf_update_6.setGeometry(QtCore.QRect(330, 14, 101, 91))
+        self.kuf_update_6.setObjectName("kuf_update_6")
+        self.kuf_myrace_6 = QtWidgets.QComboBox(self.groupBox_17)
+        self.kuf_myrace_6.setGeometry(QtCore.QRect(160, 20, 76, 22))
+        self.kuf_myrace_6.setObjectName("kuf_myrace_6")
+        self.kuf_myrace_6.addItem("")
+        self.kuf_myrace_6.addItem("")
+        self.kuf_myrace_6.addItem("")
+        self.kuf_myrace_6.addItem("")
+        self.kuf_myname_6 = QtWidgets.QLineEdit(self.groupBox_17)
+        self.kuf_myname_6.setGeometry(QtCore.QRect(60, 20, 91, 20))
+        self.kuf_myname_6.setObjectName("kuf_myname_6")
+        self.kuf_yourname_6 = QtWidgets.QLineEdit(self.groupBox_17)
+        self.kuf_yourname_6.setGeometry(QtCore.QRect(60, 50, 91, 20))
+        self.kuf_yourname_6.setObjectName("kuf_yourname_6")
+        self.kuf_yourace_6 = QtWidgets.QComboBox(self.groupBox_17)
+        self.kuf_yourace_6.setGeometry(QtCore.QRect(160, 50, 76, 22))
+        self.kuf_yourace_6.setObjectName("kuf_yourace_6")
+        self.kuf_yourace_6.addItem("")
+        self.kuf_yourace_6.addItem("")
+        self.kuf_yourace_6.addItem("")
+        self.kuf_yourace_6.addItem("")
         self.label_22 = QtWidgets.QLabel(self.groupBox_17)
         self.label_22.setGeometry(QtCore.QRect(10, 50, 41, 21))
         self.label_22.setObjectName("label_22")
@@ -523,22 +489,22 @@ class Ui_MainWindow(object):
         self.label_23.setGeometry(QtCore.QRect(10, 20, 41, 21))
         self.label_23.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.label_23.setObjectName("label_23")
-        self.jurassic_win = QtWidgets.QRadioButton(self.groupBox_17)
-        self.jurassic_win.setGeometry(QtCore.QRect(260, 30, 51, 21))
-        self.jurassic_win.setTabletTracking(False)
-        self.jurassic_win.setChecked(True)
-        self.jurassic_win.setObjectName("kuf_win_6")
-        self.jurassic_lose = QtWidgets.QRadioButton(self.groupBox_17)
-        self.jurassic_lose.setGeometry(QtCore.QRect(260, 60, 51, 21))
-        self.jurassic_lose.setObjectName("jurassic_lose")
+        self.kuf_win_6 = QtWidgets.QRadioButton(self.groupBox_17)
+        self.kuf_win_6.setGeometry(QtCore.QRect(260, 30, 51, 21))
+        self.kuf_win_6.setTabletTracking(False)
+        self.kuf_win_6.setChecked(True)
+        self.kuf_win_6.setObjectName("kuf_win_6")
+        self.kuf_lose_6 = QtWidgets.QRadioButton(self.groupBox_17)
+        self.kuf_lose_6.setGeometry(QtCore.QRect(260, 60, 51, 21))
+        self.kuf_lose_6.setObjectName("kuf_lose_6")
         self.label_24 = QtWidgets.QLabel(self.groupBox_17)
         self.label_24.setGeometry(QtCore.QRect(10, 80, 41, 21))
         self.label_24.setObjectName("label_24")
-        self.jurassic_map = QtWidgets.QComboBox(self.groupBox_17)
-        self.jurassic_map.setGeometry(QtCore.QRect(70, 80, 166, 22))
-        self.jurassic_map.setObjectName("jurassic_map")
-        self.jurassic_map.addItem("")
-        self.jurassic_map.addItem("")
+        self.kuf_map_6 = QtWidgets.QComboBox(self.groupBox_17)
+        self.kuf_map_6.setGeometry(QtCore.QRect(70, 80, 166, 22))
+        self.kuf_map_6.setObjectName("kuf_map_6")
+        self.kuf_map_6.addItem("")
+        self.kuf_map_6.addItem("")
         self.groupBox_18 = QtWidgets.QGroupBox(self.jurrasic_frame)
         self.groupBox_18.setGeometry(QtCore.QRect(130, 10, 341, 131))
         self.groupBox_18.setObjectName("groupBox_18")
@@ -558,11 +524,11 @@ class Ui_MainWindow(object):
         self.jurassic_kakao = QtWidgets.QPushButton(self.groupBox_18)
         self.jurassic_kakao.setGeometry(QtCore.QRect(170, 72, 75, 39))
         self.jurassic_kakao.setObjectName("jurassic_kakao")
-        self.jurassic_start = QtWidgets.QPushButton(self.jurrasic_frame)
-        self.jurassic_start.setGeometry(QtCore.QRect(20, 270, 451, 41))
-        self.jurassic_start.setIcon(icon2)
-        self.jurassic_start.setIconSize(QtCore.QSize(30, 30))
-        self.jurassic_start.setObjectName("jurassic_start")
+        self.kuf_start_6 = QtWidgets.QPushButton(self.jurrasic_frame)
+        self.kuf_start_6.setGeometry(QtCore.QRect(20, 270, 451, 41))
+        self.kuf_start_6.setIcon(icon2)
+        self.kuf_start_6.setIconSize(QtCore.QSize(30, 30))
+        self.kuf_start_6.setObjectName("kuf_start_6")
         self.atrox_frame = QtWidgets.QFrame(self.centralwidget)
         self.atrox_frame.setEnabled(True)
         self.atrox_frame.setGeometry(QtCore.QRect(780, 760, 491, 321))
@@ -647,20 +613,17 @@ class Ui_MainWindow(object):
         self.atrox_start.setIcon(icon6)
         self.atrox_start.setIconSize(QtCore.QSize(30, 30))
         self.atrox_start.setObjectName("atrox_start")
-        self.global_nikname = QtWidgets.QLineEdit(self.centralwidget)
-        self.global_nikname.setGeometry(QtCore.QRect(500, 40, 113, 20))
-        self.global_nikname.setObjectName("global_nikname")
-        
-        
-        
-        self.global_myip = QtWidgets.QPushButton(self.centralwidget)
-        self.global_myip.setGeometry(QtCore.QRect(620, 40, 100, 21))
-        
-        self.global_myip.setObjectName("global_myip")
-        self.label_nikname = QtWidgets.QLabel(self.centralwidget)
-        self.label_nikname.setGeometry(QtCore.QRect(460, 40, 41, 21))
-        self.label_nikname.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.label_nikname.setObjectName("label_nikname")
+        self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit.setGeometry(QtCore.QRect(510, 40, 113, 20))
+        self.lineEdit.setObjectName("lineEdit")
+        self.kuf_ip_2 = QtWidgets.QLabel(self.centralwidget)
+        self.kuf_ip_2.setGeometry(QtCore.QRect(640, 40, 81, 21))
+        self.kuf_ip_2.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.kuf_ip_2.setObjectName("kuf_ip_2")
+        self.kuf_ip_4 = QtWidgets.QLabel(self.centralwidget)
+        self.kuf_ip_4.setGeometry(QtCore.QRect(470, 40, 41, 21))
+        self.kuf_ip_4.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.kuf_ip_4.setObjectName("kuf_ip_4")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1465, 21))
@@ -677,19 +640,19 @@ class Ui_MainWindow(object):
         self.launcherexit_action.setObjectName("launcherexit_action")
         self.launcherinfo_action = QtWidgets.QAction(MainWindow)
         self.launcherinfo_action.setObjectName("launcherinfo_action")
-        self.gamepath_action = QtWidgets.QAction(MainWindow)
-        self.gamepath_action.setObjectName("gamepath_action")
+        self.nikanme_action = QtWidgets.QAction(MainWindow)
+        self.nikanme_action.setObjectName("nikanme_action")
         self.laucherupdate_action = QtWidgets.QAction(MainWindow)
         self.laucherupdate_action.setObjectName("laucherupdate_action")
-        self.menu.addAction(self.gamepath_action)
+        self.menu.addAction(self.nikanme_action)
         self.menu.addAction(self.launcherexit_action)
         self.menu_2.addAction(self.laucherupdate_action)
         self.menu_2.addAction(self.launcherinfo_action)
         self.menubar.addAction(self.menu.menuAction())
         self.menubar.addAction(self.menu_2.menuAction())
 
-
         self.retranslateUi(MainWindow)
+        self.lineEdit.textChanged['QString'].connect(self.kuf_myname.setText)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         MainWindow.setTabOrder(self.kuf_menu, self.jurassic_menu)
         MainWindow.setTabOrder(self.jurassic_menu, self.imjinrok_menu)
@@ -714,107 +677,6 @@ class Ui_MainWindow(object):
         MainWindow.setTabOrder(self.kuf_update, self.kuf_myrace)
         MainWindow.setTabOrder(self.kuf_myrace, self.kuf_myname)
 
-        def JURASSIC_FRAME() :
-            print("쥬라기원시전")
-            self.kuf_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
-            self.mirror_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
-            self.newmyth_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
-            self.imjinrok_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
-            self.atrox_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
-            self.jurrasic_frame.setGeometry(QtCore.QRect(250, 65, 491, 321))
-        def KUF_FRAME() :
-            print("킹덤언더파이어")
-            self.kuf_frame.setGeometry(QtCore.QRect(250, 65, 491, 321))
-            self.mirror_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
-            self.newmyth_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
-            self.imjinrok_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
-            self.atrox_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
-            self.jurrasic_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
-        def IMJINROK_FRAME() :
-            print("조선의반격")
-            self.kuf_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
-            self.mirror_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
-            self.newmyth_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
-            self.imjinrok_frame.setGeometry(QtCore.QRect(250, 65, 491, 321))
-            self.atrox_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
-            self.jurrasic_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
-            print(self.global_nikname.text()+"dd")
-        def NEWMYTH_FRAME() :
-            print("신천년의신화")
-            self.kuf_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
-            self.mirror_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
-            self.newmyth_frame.setGeometry(QtCore.QRect(250, 65, 491, 321))
-            self.imjinrok_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
-            self.atrox_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
-            self.jurrasic_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
-        def MIRRORWAR_FRAME() :
-            print("거울전쟁")
-            self.kuf_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
-            self.mirror_frame.setGeometry(QtCore.QRect(250, 65, 491, 321))
-            self.newmyth_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
-            self.imjinrok_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
-            self.atrox_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
-            self.jurrasic_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
-        def ATROX_FRAME() :
-            print("아트록스")
-            self.kuf_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
-            self.mirror_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
-            self.newmyth_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
-            self.imjinrok_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
-            self.atrox_frame.setGeometry(QtCore.QRect(250, 65, 491, 321))
-            self.jurrasic_frame.setGeometry(QtCore.QRect(250, 65, 491, 1))
-         #URL 링크 import webbrowser
-        def WEBLINK(self, weblink):
-            webbrowser.open_new(weblink)
-            print(weblink)
-        
-        self.seo_menu.clicked.connect(lambda: WEBLINK(self,'https://www.youtube.com/channel/UChkU4i0CdTsF8xOochVdkQg?view_as=subscriber') )    
-
-        #왼쪽 사이드바 메뉴 클릭시 프레임 전환
-        self.kuf_menu.clicked.connect(KUF_FRAME)
-        self.jurassic_menu.clicked.connect(JURASSIC_FRAME)
-        self.imjinrok_menu.clicked.connect(IMJINROK_FRAME)
-        self.newmyth_menu.clicked.connect(NEWMYTH_FRAME)
-        self.mirrorwar_menu.clicked.connect(MIRRORWAR_FRAME)
-        self.atrox_menu.clicked.connect(ATROX_FRAME)
-
-        #닉네임 실시간 반영
-        def CHANGE_MYNAME():
-            myname = self.global_nikname.text()
-            self.kuf_myname.text = myname
-            self.global_nikname.textChanged['QString'].connect(self.kuf_myname.setText)
-            self.global_nikname.textChanged['QString'].connect(self.imjinrok_myname.setText)
-            self.global_nikname.textChanged['QString'].connect(self.jurassic_myname.setText)
-            self.global_nikname.textChanged['QString'].connect(self.newmyth_myname.setText)
-            self.global_nikname.textChanged['QString'].connect(self.mirrorwar_myname.setText)
-            self.global_nikname.textChanged['QString'].connect(self.atrox_myname.setText)
-            
-        self.global_nikname.textChanged.connect(CHANGE_MYNAME)
-        # 클립보드 변수 복사
-        def COPY_MYIP():
-            pyperclip.copy(myip)         
-            copymyip = pyperclip.paste()         
-            print(copymyip)
-        
-        self.global_myip.clicked.connect(COPY_MYIP)
-
-        ######커프 메뉴 ########
-        #버튼 비활성화
-        self.kuf_gold.setEnabled(False)
-        self.kuf_original.setEnabled(False)
-        
-        #다운로드 & 패치
-        self.kuf_down.clicked.connect(lambda : WEBLINK(self, "https://drive.google.com/file/d/0B9brBgUmPmnUZDRlTGpoS2R6UkE/view"))
-        #웹 사이트
-        self.kuf_rank.clicked.connect(lambda : WEBLINK(self, "https://docs.google.com/spreadsheets/d/1Dy-9UaCfiKm5hv_dpv7EvpMoGe6LjAVHqvgsWYSmG8c/edit#gid=0"))
-        self.kuf_hnor.clicked.connect(lambda : WEBLINK(self, "http://kingdomunderfire.kr/%eb%aa%85%ec%98%88%ec%9d%98%ec%a0%84%eb%8b%b9/"))
-        self.kuf_cafe.clicked.connect(lambda : WEBLINK(self, "https://cafe.naver.com/kufagain"))
-        self.kuf_kakao.clicked.connect(lambda : WEBLINK(self, "https://open.kakao.com/o/gzO67CQ"))
-        self.kuf_balance.clicked.connect(lambda : WEBLINK(self, "https://docs.google.com/spreadsheets/d/1arhuFzACojr21NKBKj_yBechPgFg2_HSOEQDZU14FvM/edit#gid=0"))
-
-        
- 
-
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "RTS.KR_1.00"))
@@ -835,15 +697,6 @@ class Ui_MainWindow(object):
         self.label_4.setText(_translate("MainWindow", "대전맵"))
         self.kuf_map.setItemText(0, _translate("MainWindow", "타우크로스"))
         self.kuf_map.setItemText(1, _translate("MainWindow", "데스티네이션"))
-
-        cnt = 0
-        for cell in kuf_maplist: # 맵리스트 출력
-            self.kuf_map.setItemText(cnt, _translate("MainWindow", cell.value))
-            cnt+=1
-            print(cell.value, cnt)
-            if cell.value == '':
-                break
-        
         self.groupBox_3.setTitle(_translate("MainWindow", "웹 사이트"))
         self.kuf_rank.setText(_translate("MainWindow", "전적기록실"))
         self.kuf_cafe.setText(_translate("MainWindow", "커뮤니티"))
@@ -853,7 +706,7 @@ class Ui_MainWindow(object):
         self.kuf_kakao.setText(_translate("MainWindow", "카카오톡\n"
 "오픈채팅방"))
         self.kuf_start.setText(_translate("MainWindow", "KUF 게임실행"))
-        self.seo_menu.setText(_translate("MainWindow", "서네떡의 전략시뮬이션"))
+        self.kuf_menu_2.setText(_translate("MainWindow", "서네떡의 전략시뮬이션"))
         self.kuf_menu.setText(_translate("MainWindow", "킹덤언더파이어"))
         self.jurassic_menu.setText(_translate("MainWindow", "쥬라기원시전2:더랭커"))
         self.imjinrok_menu.setText(_translate("MainWindow", "임진록2+:조선의반격"))
@@ -940,22 +793,22 @@ class Ui_MainWindow(object):
         self.jurassic_down.setText(_translate("MainWindow", "다운로드"))
         self.jurassic_path.setText(_translate("MainWindow", "실행 경로설정"))
         self.groupBox_17.setTitle(_translate("MainWindow", "전적 업데이트"))
-        self.jurassic_update.setText(_translate("MainWindow", "업데이트"))
-        self.jurassic_myrace.setItemText(0, _translate("MainWindow", "원시인"))
-        self.jurassic_myrace.setItemText(1, _translate("MainWindow", "티라노"))
-        self.jurassic_myrace.setItemText(2, _translate("MainWindow", "엘프"))
-        self.jurassic_myrace.setItemText(3, _translate("MainWindow", "데몬"))
-        self.jurassic_yourace.setItemText(0, _translate("MainWindow", "원시인"))
-        self.jurassic_yourace.setItemText(1, _translate("MainWindow", "티라노"))
-        self.jurassic_yourace.setItemText(2, _translate("MainWindow", "엘프"))
-        self.jurassic_yourace.setItemText(3, _translate("MainWindow", "데몬"))
+        self.kuf_update_6.setText(_translate("MainWindow", "업데이트"))
+        self.kuf_myrace_6.setItemText(0, _translate("MainWindow", "원시인"))
+        self.kuf_myrace_6.setItemText(1, _translate("MainWindow", "티라노"))
+        self.kuf_myrace_6.setItemText(2, _translate("MainWindow", "엘프"))
+        self.kuf_myrace_6.setItemText(3, _translate("MainWindow", "데몬"))
+        self.kuf_yourace_6.setItemText(0, _translate("MainWindow", "원시인"))
+        self.kuf_yourace_6.setItemText(1, _translate("MainWindow", "티라노"))
+        self.kuf_yourace_6.setItemText(2, _translate("MainWindow", "엘프"))
+        self.kuf_yourace_6.setItemText(3, _translate("MainWindow", "데몬"))
         self.label_22.setText(_translate("MainWindow", "상대방"))
         self.label_23.setText(_translate("MainWindow", "나"))
-        self.jurassic_win.setText(_translate("MainWindow", "승리"))
-        self.jurassic_lose.setText(_translate("MainWindow", "패배"))
+        self.kuf_win_6.setText(_translate("MainWindow", "승리"))
+        self.kuf_lose_6.setText(_translate("MainWindow", "패배"))
         self.label_24.setText(_translate("MainWindow", "대전맵"))
-        self.jurassic_map.setItemText(0, _translate("MainWindow", "타우크로스"))
-        self.jurassic_map.setItemText(1, _translate("MainWindow", "데스티네이션"))
+        self.kuf_map_6.setItemText(0, _translate("MainWindow", "타우크로스"))
+        self.kuf_map_6.setItemText(1, _translate("MainWindow", "데스티네이션"))
         self.groupBox_18.setTitle(_translate("MainWindow", "웹 사이트"))
         self.jurassic_rank.setText(_translate("MainWindow", "전적기록실"))
         self.jurassic_cafe.setText(_translate("MainWindow", "커뮤니티"))
@@ -963,7 +816,7 @@ class Ui_MainWindow(object):
         self.jurassic_hnor.setText(_translate("MainWindow", "명예전당"))
         self.jurassic_kakao.setText(_translate("MainWindow", "카카오톡\n"
 "오픈채팅방"))
-        self.jurassic_start.setText(_translate("MainWindow", "쥬라기원시전2:더랭커 게임실행"))
+        self.kuf_start_6.setText(_translate("MainWindow", "쥬라기원시전2:더랭커 게임실행"))
         self.groupBox_19.setTitle(_translate("MainWindow", "다운로드&& 패치"))
         self.atrox_down.setText(_translate("MainWindow", "다운로드"))
         self.atrox_path.setText(_translate("MainWindow", "실행 경로설정"))
@@ -989,13 +842,13 @@ class Ui_MainWindow(object):
         self.atrox_kakao.setText(_translate("MainWindow", "카카오톡\n"
 "오픈채팅방"))
         self.atrox_start.setText(_translate("MainWindow", "아트록스 게임실행"))
-        self.global_myip.setText(_translate("MainWindow", myip))
-        self.label_nikname.setText(_translate("MainWindow", "닉네임"))
+        self.kuf_ip_2.setText(_translate("MainWindow", "25.266.222.222"))
+        self.kuf_ip_4.setText(_translate("MainWindow", "닉네임"))
         self.menu.setTitle(_translate("MainWindow", "설정"))
         self.menu_2.setTitle(_translate("MainWindow", "기타"))
         self.launcherexit_action.setText(_translate("MainWindow", "종료"))
         self.launcherinfo_action.setText(_translate("MainWindow", "프로그램 정보"))
-        self.gamepath_action.setText(_translate("MainWindow", "게임경로 설정"))
+        self.nikanme_action.setText(_translate("MainWindow", "닉네임 설정"))
         self.laucherupdate_action.setText(_translate("MainWindow", "업데이트 확인"))
 
 
@@ -1006,11 +859,4 @@ if __name__ == "__main__":
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
-
-
     sys.exit(app.exec_())
-
-    
-    
-
-    

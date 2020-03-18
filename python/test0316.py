@@ -1,11 +1,39 @@
 import sys
-import time
+from PyQt5.QtWidgets import *
+from PyQt5 import uic
 
-barWidth = 50 # you can play with this
-def updateProgressBar(value):
-    line = '\r%s%%[%s]' % ( str(value).rjust(3), '-' * int ((float(value)/100) * barWidth))  
-    print (line,sys.stdout.flush())
+form_class = uic.loadUiType("test.ui")[0]
 
-for i in range(1,101):
-    updateProgressBar(i)
-    time.sleep(0.05) # do the job here
+class WindowClass(QMainWindow, form_class) :
+    def __init__(self) :
+        super().__init__()
+        self.setupUi(self)
+
+        #GroupBox안에 있는 RadioButton들을 연결합니다.
+        #GroupBox의 자세한 설명은 02.14 GroupBox를 참고하세요.
+
+        self.top.clicked.connect(self.groupboxRadFunction)
+        self.button.clicked.connect(self.groupboxRadFunction)
+
+    def PP(self, outcome) :
+        print(outcome)
+
+    def groupboxRadFunction(self) :
+        if self.top.isChecked() : 
+            print("GroupBox_rad1 Chekced")
+            self.update.clicked(self.PP('hi'))
+        elif self.button.isChecked() : 
+            print("GroupBox_rad2 Checked")
+            self.update.clicked(self.PP('why'))
+
+
+        
+
+
+
+
+if __name__ == "__main__" :
+    app = QApplication(sys.argv)
+    myWindow = WindowClass()
+    myWindow.show()
+    app.exec_()

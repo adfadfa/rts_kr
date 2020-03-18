@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '.\wigettest.ui'
+# Form implementation generated from reading ui file '.\test.ui'
 #
 # Created by: PyQt5 UI code generator 5.14.1
 #
@@ -16,15 +16,20 @@ class Ui_MainWindow(object):
         MainWindow.resize(800, 600)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.widget = QtWidgets.QWidget(self.centralwidget)
-        self.widget.setGeometry(QtCore.QRect(290, 210, 120, 80))
-        self.widget.setObjectName("widget")
-        self.pushButton_2 = QtWidgets.QPushButton(self.widget)
-        self.pushButton_2.setGeometry(QtCore.QRect(30, 30, 75, 23))
-        self.pushButton_2.setObjectName("pushButton_2")
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(310, 380, 75, 23))
-        self.pushButton.setObjectName("pushButton")
+        self.groupBox = QtWidgets.QGroupBox(self.centralwidget)
+        self.groupBox.setGeometry(QtCore.QRect(210, 160, 110, 70))
+        self.groupBox.setObjectName("groupBox")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.groupBox)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.top = QtWidgets.QRadioButton(self.groupBox)
+        self.top.setObjectName("top")
+        self.verticalLayout.addWidget(self.top)
+        self.button = QtWidgets.QRadioButton(self.groupBox)
+        self.button.setObjectName("button")
+        self.verticalLayout.addWidget(self.button)
+        self.update = QtWidgets.QPushButton(self.centralwidget)
+        self.update.setGeometry(QtCore.QRect(360, 180, 75, 23))
+        self.update.setObjectName("update")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
@@ -36,24 +41,26 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-    
-   
-        def CHANGE1(self):
-            print("안녕하세요")
-            print("쥬라기원시전")
-            self.widget.setFixedSize(80,80)
 
-        self.pushButton.clicked.connect(CHANGE1)
-        
+        def HI() :
+            if self.top.isChecked :
+                print("top")
+            else:
+                print("button")
 
-
+        self.top.clicked.connect(HI)
+        #self.button.clicked.connect(HI)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.pushButton_2.setText(_translate("MainWindow", "PushButton2"))
-        self.pushButton.setText(_translate("MainWindow", "PushButton1"))
+        self.groupBox.setTitle(_translate("MainWindow", "GroupBox"))
+        self.top.setText(_translate("MainWindow", "top"))
+        self.button.setText(_translate("MainWindow", "button"))
+        self.update.setText(_translate("MainWindow", "Update"))
 
+    
+    
 
 if __name__ == "__main__":
     import sys
@@ -63,6 +70,3 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
-
-    
-

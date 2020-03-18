@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1465</width>
-    <height>1180</height>
+    <width>1787</width>
+    <height>1156</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -224,7 +224,7 @@
         <x>260</x>
         <y>60</y>
         <width>51</width>
-        <height>21</height>
+        <height>17</height>
        </rect>
       </property>
       <property name="text">
@@ -389,7 +389,7 @@
       <number>0</number>
      </property>
      <item>
-      <widget class="QPushButton" name="kuf_menu_2">
+      <widget class="QPushButton" name="seo_menu">
        <property name="enabled">
         <bool>true</bool>
        </property>
@@ -2214,22 +2214,6 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLabel" name="kuf_ip_2">
-    <property name="geometry">
-     <rect>
-      <x>640</x>
-      <y>40</y>
-      <width>81</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::NoFrame</enum>
-    </property>
-    <property name="text">
-     <string>25.266.222.222</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="kuf_ip_4">
     <property name="geometry">
      <rect>
@@ -2246,13 +2230,26 @@
      <string>닉네임</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="global_myip">
+    <property name="geometry">
+     <rect>
+      <x>629</x>
+      <y>40</y>
+      <width>91</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1465</width>
+     <width>1787</width>
      <height>21</height>
     </rect>
    </property>

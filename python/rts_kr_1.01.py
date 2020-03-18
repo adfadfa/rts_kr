@@ -22,7 +22,8 @@ class WindowClass(QMainWindow, form_class) :
         myip = self.ipcheck()
         self.global_myip.setText(myip)
         self.global_myip.clicked.connect(self.COPY_MYIP)
-        self.seo_menu.clicked.connect(lambda: self.WEBLINK(self, 'https://www.youtube.com/channel/UChkU4i0CdTsF8xOochVdkQg?view_as=subscriber') )
+
+        self.seo_menu.clicked.connect(lambda: self.WEBLINK(self, 'https://www.youtube.com/channel/UChkU4i0CdTsF8xOochVdkQg?view_as=subscriber'))
 
     def ipcheck(self):
         return socket.gethostbyname(socket.getfqdn())

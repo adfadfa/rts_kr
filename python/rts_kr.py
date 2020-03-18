@@ -32,7 +32,7 @@ scope = [
 'https://spreadsheets.google.com/feeds',
 'https://www.googleapis.com/auth/drive',
 ]
-json_file_name = 'C:\\Users\seo\Downloads\mobile-master\python\kufrankingsystem-281378b273ea.json'
+json_file_name = 'C:\\Users\\seo\\Downloads\\mobile-master\\python\\kufrankingsystem-281378b273ea.json'
 credentials = ServiceAccountCredentials.from_json_keyfile_name(json_file_name, scope)
 gc = gspread.authorize(credentials)
 kuf_spreadsheeturl = 'https://docs.google.com/spreadsheets/d/1Dy-9UaCfiKm5hv_dpv7EvpMoGe6LjAVHqvgsWYSmG8c/edit#gid=0'
@@ -156,7 +156,7 @@ class Ui_MainWindow(object):
         self.kuf_start = QtWidgets.QPushButton(self.kuf_frame)
         self.kuf_start.setGeometry(QtCore.QRect(20, 270, 451, 41))
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("C:\\Users\\seo\\AndroidStudioProjects\\rts_kr\python\\KingdomUnderFire_128.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap("C:\\Users\\seo\\AndroidStudioProjects\\rts_kr\\python\\KingdomUnderFire_128.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.kuf_start.setIcon(icon1)
         self.kuf_start.setIconSize(QtCore.QSize(30, 30))
         self.kuf_start.setObjectName("kuf_start")
@@ -812,13 +812,15 @@ class Ui_MainWindow(object):
         self.global_myip.clicked.connect(COPY_MYIP)
 
         #전적 구글시트에 기록
-        def WIN_UPDATE(self, game, myrace, myname,yourname, yourace, gamemap,outcome) :
-            print("win")
-            kuf_worksheet_history.append_row(['',today, '1500',myrace, myname, yourname, yourace, gamemap])
+        def RANK_UPDATE(self, game, myrace, myname,yourname, yourace, gamemap,outcome) :
 
-        def LOSE_UPDATE(self, game, myrace, myname,yourname, yourace, gamemap, outcome):
-            print("lose")
-            kuf_worksheet_history.append_row(['',today, '1500',yourace, yourname, myname, myrace, gamemap])
+            if(outcome == 'win'):
+                kuf_worksheet_history.append_row(['',today, '1500',myrace, myname, yourname, yourace, gamemap])
+            else :
+                kuf_worksheet_history.append_row(['',today, '1500',yourace, yourname, myname, myrace, gamemap])
+
+
+            
 
 
         ######커프 메뉴 ########
@@ -839,10 +841,10 @@ class Ui_MainWindow(object):
         def EXEC_RANK():
             if self.kuf_win.isChecked(): 
                 print("win")
-                self.kuf_update.pressed.connect(lambda : WIN_UPDATE(self, 'kuf', self.kuf_myrace.currentText(), self.kuf_myname.text(), self.kuf_yourname.text(), self.kuf_yourace.currentText(), self.kuf_map.currentText(), 'win'))
+                self.kuf_update.pressed.connect(lambda : RANK_UPDATE(self, 'kuf', self.kuf_myrace.currentText(), self.kuf_myname.text(), self.kuf_yourname.text(), self.kuf_yourace.currentText(), self.kuf_map.currentText(), 'win'))
                 
             elif self.kuf_lose.isChecked() : 
-                self.kuf_update.pressed.connect(lambda : LOSE_UPDATE(self, 'kuf', self.kuf_myrace.currentText(), self.kuf_myname.text(), self.kuf_yourname.text(), self.kuf_yourace.currentText(), self.kuf_map.currentText(), 'lose'))
+                self.kuf_update.pressed.connect(lambda : RANK_UPDATE(self, 'kuf', self.kuf_myrace.currentText(), self.kuf_myname.text(), self.kuf_yourname.text(), self.kuf_yourace.currentText(), self.kuf_map.currentText(), 'lose'))
                 print("lose")
                
         

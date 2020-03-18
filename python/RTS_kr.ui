@@ -71,6 +71,9 @@
       </item>
       <item>
        <widget class="QPushButton" name="kuf_gold">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="text">
          <string>골드패치</string>
         </property>
@@ -78,6 +81,9 @@
       </item>
       <item>
        <widget class="QPushButton" name="kuf_original">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="text">
          <string>오리지널 패치</string>
         </property>
@@ -199,38 +205,6 @@
        <string>나</string>
       </property>
      </widget>
-     <widget class="QRadioButton" name="kuf_win">
-      <property name="geometry">
-       <rect>
-        <x>260</x>
-        <y>30</y>
-        <width>51</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="tabletTracking">
-       <bool>false</bool>
-      </property>
-      <property name="text">
-       <string>승리</string>
-      </property>
-      <property name="checked">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="kuf_lose">
-      <property name="geometry">
-       <rect>
-        <x>260</x>
-        <y>60</y>
-        <width>51</width>
-        <height>17</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>패배</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
@@ -253,16 +227,41 @@
         <height>22</height>
        </rect>
       </property>
-      <item>
-       <property name="text">
-        <string>타우크로스</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>데스티네이션</string>
-       </property>
-      </item>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_7">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>20</y>
+        <width>67</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>경기결과</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QRadioButton" name="kuf_win">
+         <property name="tabletTracking">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>승리</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="kuf_lose">
+         <property name="text">
+          <string>패배</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
     <widget class="QGroupBox" name="groupBox_3">
@@ -316,7 +315,7 @@
        <string>유닛 상성표</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="kuf_hnor">
+     <widget class="QPushButton" name="kuf_honor">
       <property name="geometry">
        <rect>
         <x>90</x>
@@ -739,38 +738,6 @@
        <string>나</string>
       </property>
      </widget>
-     <widget class="QRadioButton" name="imjinrok_win">
-      <property name="geometry">
-       <rect>
-        <x>260</x>
-        <y>30</y>
-        <width>51</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="tabletTracking">
-       <bool>false</bool>
-      </property>
-      <property name="text">
-       <string>승리</string>
-      </property>
-      <property name="checked">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="imjinrok_lose">
-      <property name="geometry">
-       <rect>
-        <x>260</x>
-        <y>60</y>
-        <width>51</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>패배</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_8">
       <property name="geometry">
        <rect>
@@ -793,16 +760,41 @@
         <height>22</height>
        </rect>
       </property>
-      <item>
-       <property name="text">
-        <string>타우크로스</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>데스티네이션</string>
-       </property>
-      </item>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_8">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>20</y>
+        <width>67</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>경기결과</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_9">
+       <item>
+        <widget class="QRadioButton" name="imjinrok_win">
+         <property name="tabletTracking">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>승리</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="imjinrok_lose">
+         <property name="text">
+          <string>패배</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
     <widget class="QGroupBox" name="groupBox_6">
@@ -1067,38 +1059,6 @@
        <string>나</string>
       </property>
      </widget>
-     <widget class="QRadioButton" name="newmyth_win">
-      <property name="geometry">
-       <rect>
-        <x>260</x>
-        <y>30</y>
-        <width>51</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="tabletTracking">
-       <bool>false</bool>
-      </property>
-      <property name="text">
-       <string>승리</string>
-      </property>
-      <property name="checked">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="newmyth_lose">
-      <property name="geometry">
-       <rect>
-        <x>260</x>
-        <y>60</y>
-        <width>51</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>패배</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_16">
       <property name="geometry">
        <rect>
@@ -1121,16 +1081,41 @@
         <height>22</height>
        </rect>
       </property>
-      <item>
-       <property name="text">
-        <string>타우크로스</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>데스티네이션</string>
-       </property>
-      </item>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_9">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>20</y>
+        <width>67</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>경기결과</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_10">
+       <item>
+        <widget class="QRadioButton" name="newmyth_win">
+         <property name="tabletTracking">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>승리</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="newmyth_lose">
+         <property name="text">
+          <string>패배</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
     <widget class="QGroupBox" name="groupBox_12">
@@ -1381,38 +1366,6 @@
        <string>나</string>
       </property>
      </widget>
-     <widget class="QRadioButton" name="kuf_win_5">
-      <property name="geometry">
-       <rect>
-        <x>260</x>
-        <y>30</y>
-        <width>51</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="tabletTracking">
-       <bool>false</bool>
-      </property>
-      <property name="text">
-       <string>승리</string>
-      </property>
-      <property name="checked">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="kuf_lose_5">
-      <property name="geometry">
-       <rect>
-        <x>260</x>
-        <y>60</y>
-        <width>51</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>패배</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_20">
       <property name="geometry">
        <rect>
@@ -1435,16 +1388,41 @@
         <height>22</height>
        </rect>
       </property>
-      <item>
-       <property name="text">
-        <string>타우크로스</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>데스티네이션</string>
-       </property>
-      </item>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_22">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>20</y>
+        <width>67</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>경기결과</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_11">
+       <item>
+        <widget class="QRadioButton" name="kuf_win_5">
+         <property name="tabletTracking">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>승리</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="kuf_lose_5">
+         <property name="text">
+          <string>패배</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
     <widget class="QGroupBox" name="groupBox_15">
@@ -1583,7 +1561,7 @@
      <property name="title">
       <string>전적 업데이트</string>
      </property>
-     <widget class="QPushButton" name="kuf_update_6">
+     <widget class="QPushButton" name="jurassic_update">
       <property name="geometry">
        <rect>
         <x>330</x>
@@ -1596,7 +1574,7 @@
        <string>업데이트</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="kuf_myrace_6">
+     <widget class="QComboBox" name="jurassic_myrace">
       <property name="geometry">
        <rect>
         <x>160</x>
@@ -1626,7 +1604,7 @@
        </property>
       </item>
      </widget>
-     <widget class="QLineEdit" name="kuf_myname_6">
+     <widget class="QLineEdit" name="jurassic_myname">
       <property name="geometry">
        <rect>
         <x>60</x>
@@ -1636,7 +1614,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QLineEdit" name="kuf_yourname_6">
+     <widget class="QLineEdit" name="jurassic_yourname">
       <property name="geometry">
        <rect>
         <x>60</x>
@@ -1646,7 +1624,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QComboBox" name="kuf_yourace_6">
+     <widget class="QComboBox" name="jurassic_yourace">
       <property name="geometry">
        <rect>
         <x>160</x>
@@ -1705,38 +1683,6 @@
        <string>나</string>
       </property>
      </widget>
-     <widget class="QRadioButton" name="kuf_win_6">
-      <property name="geometry">
-       <rect>
-        <x>260</x>
-        <y>30</y>
-        <width>51</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="tabletTracking">
-       <bool>false</bool>
-      </property>
-      <property name="text">
-       <string>승리</string>
-      </property>
-      <property name="checked">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="kuf_lose_6">
-      <property name="geometry">
-       <rect>
-        <x>260</x>
-        <y>60</y>
-        <width>51</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>패배</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_24">
       <property name="geometry">
        <rect>
@@ -1750,7 +1696,7 @@
        <string>대전맵</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="kuf_map_6">
+     <widget class="QComboBox" name="jurassic_map">
       <property name="geometry">
        <rect>
         <x>70</x>
@@ -1759,16 +1705,41 @@
         <height>22</height>
        </rect>
       </property>
-      <item>
-       <property name="text">
-        <string>타우크로스</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>데스티네이션</string>
-       </property>
-      </item>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_23">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>20</y>
+        <width>67</width>
+        <height>70</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>경기결과</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_12">
+       <item>
+        <widget class="QRadioButton" name="jurassic_win">
+         <property name="tabletTracking">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>승리</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="jurassic_lose">
+         <property name="text">
+          <string>패배</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
     <widget class="QGroupBox" name="groupBox_18">
@@ -2048,38 +2019,6 @@
        <string>나</string>
       </property>
      </widget>
-     <widget class="QRadioButton" name="atrox_win">
-      <property name="geometry">
-       <rect>
-        <x>260</x>
-        <y>30</y>
-        <width>51</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="tabletTracking">
-       <bool>false</bool>
-      </property>
-      <property name="text">
-       <string>승리</string>
-      </property>
-      <property name="checked">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="atrox_lose">
-      <property name="geometry">
-       <rect>
-        <x>260</x>
-        <y>60</y>
-        <width>51</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>패배</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_28">
       <property name="geometry">
        <rect>
@@ -2102,16 +2041,41 @@
         <height>22</height>
        </rect>
       </property>
-      <item>
-       <property name="text">
-        <string>타우크로스</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>데스티네이션</string>
-       </property>
-      </item>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_24">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>20</y>
+        <width>67</width>
+        <height>70</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>경기결과</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_13">
+       <item>
+        <widget class="QRadioButton" name="atrox_win">
+         <property name="tabletTracking">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>승리</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="atrox_lose">
+         <property name="text">
+          <string>패배</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
     <widget class="QGroupBox" name="groupBox_21">
@@ -2204,7 +2168,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QLineEdit" name="global_nikname">
     <property name="geometry">
      <rect>
       <x>510</x>
@@ -2240,7 +2204,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string/>
     </property>
    </widget>
   </widget>
@@ -2301,13 +2265,11 @@
   <tabstop>atrox_menu</tabstop>
   <tabstop>kuf_yourname</tabstop>
   <tabstop>kuf_yourace</tabstop>
-  <tabstop>kuf_win</tabstop>
-  <tabstop>kuf_lose</tabstop>
   <tabstop>kuf_map</tabstop>
   <tabstop>kuf_rank</tabstop>
   <tabstop>kuf_cafe</tabstop>
   <tabstop>kuf_balance</tabstop>
-  <tabstop>kuf_hnor</tabstop>
+  <tabstop>kuf_honor</tabstop>
   <tabstop>kuf_kakao</tabstop>
   <tabstop>kuf_start</tabstop>
   <tabstop>kuf_down</tabstop>

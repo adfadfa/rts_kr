@@ -21,6 +21,7 @@ class WindowClass(QMainWindow, form_class) :
     def groupboxRadFunction(self) :
         if self.top.isChecked() : 
             print("GroupBox_rad1 Chekced")
+            QtGui.Q
             self.update.clicked(self.PP('hi'))
         elif self.button.isChecked() : 
             print("GroupBox_rad2 Checked")

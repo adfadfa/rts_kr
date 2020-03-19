@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>769</width>
-    <height>523</height>
+    <width>1860</width>
+    <height>1089</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -2399,7 +2399,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>769</width>
+     <width>1860</width>
      <height>21</height>
     </rect>
    </property>
@@ -2443,27 +2443,108 @@
   </action>
  </widget>
  <tabstops>
+  <tabstop>seo_menu</tabstop>
   <tabstop>kuf_menu</tabstop>
   <tabstop>jurassic_menu</tabstop>
   <tabstop>imjinrok_menu</tabstop>
   <tabstop>newmyth_menu</tabstop>
   <tabstop>mirrorwar_menu</tabstop>
   <tabstop>atrox_menu</tabstop>
+  <tabstop>global_nikname</tabstop>
+  <tabstop>kuf_myname</tabstop>
   <tabstop>kuf_yourname</tabstop>
+  <tabstop>kuf_myrace</tabstop>
   <tabstop>kuf_yourace</tabstop>
-  <tabstop>kuf_map</tabstop>
-  <tabstop>kuf_rank</tabstop>
-  <tabstop>kuf_cafe</tabstop>
-  <tabstop>kuf_balance</tabstop>
-  <tabstop>kuf_honor</tabstop>
-  <tabstop>kuf_kakao</tabstop>
-  <tabstop>kuf_start</tabstop>
+  <tabstop>kuf_win</tabstop>
+  <tabstop>kuf_lose</tabstop>
+  <tabstop>kuf_update</tabstop>
   <tabstop>kuf_down</tabstop>
   <tabstop>kuf_gold</tabstop>
   <tabstop>kuf_original</tabstop>
-  <tabstop>kuf_update</tabstop>
-  <tabstop>kuf_myrace</tabstop>
-  <tabstop>kuf_myname</tabstop>
+  <tabstop>kuf_start</tabstop>
+  <tabstop>kuf_cafe</tabstop>
+  <tabstop>kuf_map</tabstop>
+  <tabstop>kuf_honor</tabstop>
+  <tabstop>kuf_kakao</tabstop>
+  <tabstop>kuf_rank</tabstop>
+  <tabstop>imjinrok_down</tabstop>
+  <tabstop>imjinrok_path</tabstop>
+  <tabstop>imjinrok_eslpatch</tabstop>
+  <tabstop>imjinrok_jmpatch</tabstop>
+  <tabstop>imjinrok_update</tabstop>
+  <tabstop>imjinrok_myrace</tabstop>
+  <tabstop>imjinrok_myname</tabstop>
+  <tabstop>imjinrok_yourname</tabstop>
+  <tabstop>imjinrok_yourace</tabstop>
+  <tabstop>imjinrok_map</tabstop>
+  <tabstop>imjinrok_win</tabstop>
+  <tabstop>imjinrok_lose</tabstop>
+  <tabstop>imjinrok_rank</tabstop>
+  <tabstop>imjinrok_cafe</tabstop>
+  <tabstop>imjinrok_skin</tabstop>
+  <tabstop>imjinrok_kakao</tabstop>
+  <tabstop>imjinrok_start</tabstop>
+  <tabstop>newmyth_down</tabstop>
+  <tabstop>newmyth_path</tabstop>
+  <tabstop>newmyth_update</tabstop>
+  <tabstop>newmyth_myrace</tabstop>
+  <tabstop>newmyth_myname</tabstop>
+  <tabstop>newmyth_yourname</tabstop>
+  <tabstop>newmyth_yourace</tabstop>
+  <tabstop>newmyth_map</tabstop>
+  <tabstop>newmyth_win</tabstop>
+  <tabstop>newmyth_lose</tabstop>
+  <tabstop>newmyth_rank</tabstop>
+  <tabstop>newmyth_kakao_2</tabstop>
+  <tabstop>newmyth_cafe</tabstop>
+  <tabstop>newmyth_start</tabstop>
+  <tabstop>mirrorwar_down</tabstop>
+  <tabstop>mirrorwar_path</tabstop>
+  <tabstop>mirrorwar_update</tabstop>
+  <tabstop>mirrorwar_myrace</tabstop>
+  <tabstop>mirrorwar_myname</tabstop>
+  <tabstop>mirrorwar_yourname</tabstop>
+  <tabstop>mirrorwar_yourace</tabstop>
+  <tabstop>mirrorwar_map</tabstop>
+  <tabstop>kuf_win_5</tabstop>
+  <tabstop>kuf_lose_5</tabstop>
+  <tabstop>mirrorwar_rank</tabstop>
+  <tabstop>mirrorwar_cafe</tabstop>
+  <tabstop>mirrorwar_kakao</tabstop>
+  <tabstop>mirrorwar_start</tabstop>
+  <tabstop>jurassic_down</tabstop>
+  <tabstop>jurassic_path</tabstop>
+  <tabstop>jurassic_update</tabstop>
+  <tabstop>jurassic_myrace</tabstop>
+  <tabstop>jurassic_myname</tabstop>
+  <tabstop>jurassic_yourname</tabstop>
+  <tabstop>jurassic_yourace</tabstop>
+  <tabstop>jurassic_map</tabstop>
+  <tabstop>jurassic_win</tabstop>
+  <tabstop>jurassic_lose</tabstop>
+  <tabstop>jurassic_rank</tabstop>
+  <tabstop>jurassic_cafe</tabstop>
+  <tabstop>jurassic_balance</tabstop>
+  <tabstop>jurassic_hnor</tabstop>
+  <tabstop>jurassic_kakao</tabstop>
+  <tabstop>kuf_start_6</tabstop>
+  <tabstop>atrox_down</tabstop>
+  <tabstop>atrox_path</tabstop>
+  <tabstop>atrox_update</tabstop>
+  <tabstop>atrox_myrace</tabstop>
+  <tabstop>atrox_myname</tabstop>
+  <tabstop>atrox_yourname</tabstop>
+  <tabstop>atrox_yourace</tabstop>
+  <tabstop>atrox_map</tabstop>
+  <tabstop>atrox_win</tabstop>
+  <tabstop>atrox_lose</tabstop>
+  <tabstop>atrox_rank</tabstop>
+  <tabstop>atrox_cafe</tabstop>
+  <tabstop>atrox_balance</tabstop>
+  <tabstop>atrox_kakao</tabstop>
+  <tabstop>atrox_start</tabstop>
+  <tabstop>kuf_balance</tabstop>
+  <tabstop>global_myip</tabstop>
  </tabstops>
  <resources/>
  <connections/>

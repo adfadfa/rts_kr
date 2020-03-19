@@ -148,19 +148,28 @@ class WindowClass(QMainWindow, form_class) :
             
 
             try:
-                self.afteryourating= float(self.yourating)+32*(0-1/(1+10%((float(self.myrating)-float(self.yourating))/400)))
+                self.afteryourating = float(self.yourating)+32*(0-1/(1+10%((float(self.myrating)-float(self.yourating))/400)))
             except ZeroDivisionError:
                 print("ZeroDivisionError")
             self.fluctmyrating= float(self.aftermyrating) - float(self.myrating)
+            self.fluctyourating= float(self.afteryourating) - float(self.yourating)
 
             print("나의 이전레이팅",self.myrating,"이후레이팅:",int(self.aftermyrating))
             print("레이팅은 %s행%s열" % (self.findmyname.row, self.findmyname.col+4))
 
-            self.kuf_worksheet_history.append_row(['',self.today, gamemap,self.myrating,myrace, myname, yourname, yourace,self.yourating, self.fluctmyrating, self.aftermyrating, self.afteryourating ])
+            self.kuf_worksheet_history.append_row(['',self.today, gamemap,self.myrating, myrace, myname, yourname, yourace, self.yourating, self.fluctmyrating, self.aftermyrating, self.afteryourating, self.fluctyourating ])
+            print("업데이트할 현재레이팅위치", self.findmyname.row, self.findmyname.col+4,'E'+str(self.findmyname.row) )
+            #update current rating
+            self.kuf_worksheet_rank.update('E'+str(self.findmyname.row), self.aftermyrating)
+            self.kuf_worksheet_rank.update('E'+str(self.findyourname.row), self.afteryourating)
+
+
+            ##update current rating
+            
 
             print("승리")
         elif outcome == False :
-            self.kuf_worksheet_history.append_row(['',self.today, gamemap, 1500,yourace, yourname, myname, myrace, 1500])
+            self.kuf_worksheet_history.append_row(['',self.today, gamemap, self.yourating, yourace, yourname, myname, myrace, self.myrating, self.fluctyourating, self.afteryourating, self.aftermyrating, self.fluctmyrating])
             self.FIND_USER(myname)
             self.FIND_USER(yourname)
             print("패배")

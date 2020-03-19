@@ -107,7 +107,7 @@ class WindowClass(QMainWindow, form_class) :
         self.cnt = 0
         self.chk = 0
         for self.user in self.kuf_userlist:
-            print("검색중" , self.cnt,self.user,self.checkusername)
+            #print("검색중" , self.cnt,self.user,self.checkusername)
             
             if ( self.user.value == self.checkusername):
                 print("찾았음 : ", self.user.value, self.checkusername)
@@ -116,10 +116,10 @@ class WindowClass(QMainWindow, form_class) :
             else:
                 print("유저 없음", self.chk)
             self.cnt+=1
-        print("검색 끝")
+        #print("검색 끝")
         if(self.chk == 0):
             print(type(self.checkusername))
-            self.kuf_worksheet_rank.append_row([self.checkusername])
+            self.kuf_worksheet_rank.append_row([self.checkusername,'','','',1500])
             #slef.kuf_worksheet_rank.
             print("사용자 추가")
         else:
@@ -127,13 +127,37 @@ class WindowClass(QMainWindow, form_class) :
         
 
 
-
-
     def RANK_UPDATE(self, game, myrace, myname,yourname, yourace, gamemap,outcome) :
         if outcome == True :
-            self.kuf_worksheet_history.append_row(['',self.today, gamemap,1500,myrace, myname, yourname, yourace,1500, ])
+
+            #ragistry user
             self.FIND_USER(myname)
             self.FIND_USER(yourname)
+
+            #find before rating point
+            self.findmyname = self.kuf_worksheet_rank.find(myname)
+            self.myrating = self.kuf_worksheet_rank.cell(self.findmyname.row, self.findmyname.col+4).value
+            self.findyourname = self.kuf_worksheet_rank.find(yourname)
+            self.yourating = self.kuf_worksheet_rank.cell(self.findyourname.row, self.findyourname.col+4).value
+            try:
+                self.aftermyrating= float(self.myrating)+64*(1-1/(1+10%((float(self.yourating)-float(self.myrating))/400)))
+            except ZeroDivisionError:
+                print("ZeroDivisionError")
+            
+            print(float(self.yourating),"+32*(0-1/(1+10%((", float(self.myrating)-float(self.yourating),")/400)))")
+            
+
+            try:
+                self.afteryourating= float(self.yourating)+32*(0-1/(1+10%((float(self.myrating)-float(self.yourating))/400)))
+            except ZeroDivisionError:
+                print("ZeroDivisionError")
+            self.fluctmyrating= float(self.aftermyrating) - float(self.myrating)
+
+            print("나의 이전레이팅",self.myrating,"이후레이팅:",int(self.aftermyrating))
+            print("레이팅은 %s행%s열" % (self.findmyname.row, self.findmyname.col+4))
+
+            self.kuf_worksheet_history.append_row(['',self.today, gamemap,self.myrating,myrace, myname, yourname, yourace,self.yourating, self.fluctmyrating, self.aftermyrating, self.afteryourating ])
+
             print("승리")
         elif outcome == False :
             self.kuf_worksheet_history.append_row(['',self.today, gamemap, 1500,yourace, yourname, myname, myrace, 1500])

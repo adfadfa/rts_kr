@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1787</width>
-    <height>1156</height>
+    <width>1898</width>
+    <height>1264</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -40,7 +40,7 @@
       <x>250</x>
       <y>65</y>
       <width>491</width>
-      <height>321</height>
+      <height>401</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -351,7 +351,7 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>270</y>
+       <y>340</y>
        <width>451</width>
        <height>41</height>
       </rect>
@@ -370,6 +370,35 @@
       </size>
      </property>
     </widget>
+    <widget class="QGroupBox" name="groupBox_25">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>270</y>
+       <width>451</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>현재: 나의 랭킹</string>
+     </property>
+     <widget class="QLabel" name="kuf_myrank">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>431</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="text">
+       <string>현재순위 : 1위(1%) | 닉네임 : 서네떡 |  랭크: A(1988) | 전적 : 13승 2패(87%)</string>
+      </property>
+     </widget>
+    </widget>
    </widget>
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
@@ -377,7 +406,7 @@
       <x>20</x>
       <y>20</y>
       <width>181</width>
-      <height>371</height>
+      <height>441</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -465,6 +494,9 @@
      </item>
      <item>
       <widget class="QPushButton" name="jurassic_menu">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="text">
         <string>쥬라기원시전2:더랭커</string>
        </property>
@@ -482,6 +514,9 @@
      </item>
      <item>
       <widget class="QPushButton" name="imjinrok_menu">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="text">
         <string>임진록2+:조선의반격</string>
        </property>
@@ -499,6 +534,9 @@
      </item>
      <item>
       <widget class="QPushButton" name="newmyth_menu">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="text">
         <string>신 천년의신화</string>
        </property>
@@ -516,6 +554,9 @@
      </item>
      <item>
       <widget class="QPushButton" name="mirrorwar_menu">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="text">
         <string>거울전쟁:은의여인</string>
        </property>
@@ -562,7 +603,7 @@
       <x>780</x>
       <y>60</y>
       <width>491</width>
-      <height>321</height>
+      <height>401</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -868,7 +909,7 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>270</y>
+       <y>340</y>
        <width>451</width>
        <height>41</height>
       </rect>
@@ -887,6 +928,35 @@
       </size>
      </property>
     </widget>
+    <widget class="QGroupBox" name="groupBox_27">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>270</y>
+       <width>451</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>현재: 나의 랭킹</string>
+     </property>
+     <widget class="QLabel" name="kuf_myrank_4">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>431</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="text">
+       <string>현재순위 : 1위 | 닉네임 : 서네떡 |  랭크: A(1988) | 전적 : 13승 2패(87%)</string>
+      </property>
+     </widget>
+    </widget>
    </widget>
    <widget class="QFrame" name="newmyth_frame">
     <property name="enabled">
@@ -895,9 +965,9 @@
     <property name="geometry">
      <rect>
       <x>250</x>
-      <y>400</y>
+      <y>490</y>
       <width>491</width>
-      <height>321</height>
+      <height>401</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -1175,7 +1245,7 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>270</y>
+       <y>340</y>
        <width>451</width>
        <height>41</height>
       </rect>
@@ -1194,6 +1264,35 @@
       </size>
      </property>
     </widget>
+    <widget class="QGroupBox" name="groupBox_26">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>270</y>
+       <width>451</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>현재: 나의 랭킹</string>
+     </property>
+     <widget class="QLabel" name="kuf_myrank_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>431</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="text">
+       <string>현재순위 : 1위(1%) | 닉네임 : 서네떡 |  랭크: A(1988) | 전적 : 13승 2패(87%)</string>
+      </property>
+     </widget>
+    </widget>
    </widget>
    <widget class="QFrame" name="mirror_frame">
     <property name="enabled">
@@ -1201,10 +1300,10 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>780</x>
-      <y>402</y>
+      <x>1320</x>
+      <y>490</y>
       <width>491</width>
-      <height>321</height>
+      <height>401</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -1482,7 +1581,7 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>270</y>
+       <y>340</y>
        <width>451</width>
        <height>41</height>
       </rect>
@@ -1501,6 +1600,35 @@
       </size>
      </property>
     </widget>
+    <widget class="QGroupBox" name="groupBox_28">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>270</y>
+       <width>451</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>현재: 나의 랭킹</string>
+     </property>
+     <widget class="QLabel" name="kuf_myrank_5">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>431</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="text">
+       <string>현재순위 : 1위 | 닉네임 : 서네떡 |  랭크: A(1988) | 전적 : 13승 2패(87%)</string>
+      </property>
+     </widget>
+    </widget>
    </widget>
    <widget class="QFrame" name="jurrasic_frame">
     <property name="enabled">
@@ -1508,10 +1636,10 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>760</y>
+      <x>1320</x>
+      <y>70</y>
       <width>491</width>
-      <height>321</height>
+      <height>401</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -1828,7 +1956,7 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>270</y>
+       <y>330</y>
        <width>451</width>
        <height>41</height>
       </rect>
@@ -1847,6 +1975,35 @@
       </size>
      </property>
     </widget>
+    <widget class="QGroupBox" name="groupBox_30">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>260</y>
+       <width>451</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>현재: 나의 랭킹</string>
+     </property>
+     <widget class="QLabel" name="kuf_myrank_7">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>431</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="text">
+       <string>현재순위 : 1위 | 닉네임 : 서네떡 |  랭크: A(1988) | 전적 : 13승 2패(87%)</string>
+      </property>
+     </widget>
+    </widget>
    </widget>
    <widget class="QFrame" name="atrox_frame">
     <property name="enabled">
@@ -1854,10 +2011,10 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>780</x>
-      <y>760</y>
+      <x>790</x>
+      <y>490</y>
       <width>491</width>
-      <height>321</height>
+      <height>401</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -2148,7 +2305,7 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>270</y>
+       <y>340</y>
        <width>451</width>
        <height>41</height>
       </rect>
@@ -2166,6 +2323,35 @@
        <height>30</height>
       </size>
      </property>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_29">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>270</y>
+       <width>451</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>현재: 나의 랭킹</string>
+     </property>
+     <widget class="QLabel" name="kuf_myrank_6">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>431</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="text">
+       <string>현재순위 : 1위 | 닉네임 : 서네떡 |  랭크: A(1988) | 전적 : 13승 2패(87%)</string>
+      </property>
+     </widget>
     </widget>
    </widget>
    <widget class="QLineEdit" name="global_nikname">
@@ -2213,7 +2399,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1787</width>
+     <width>1898</width>
      <height>21</height>
     </rect>
    </property>

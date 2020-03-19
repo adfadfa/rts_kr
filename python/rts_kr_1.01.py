@@ -70,12 +70,11 @@ class WindowClass(QMainWindow, form_class) :
         self.kuf_update.clicked.connect(lambda : self.RANK_UPDATE('kuf', self.kuf_myrace.currentText(), self.kuf_myname.text(), self.kuf_yourname.text(), self.kuf_yourace.currentText(), self.kuf_map.currentText(), self.kuf_win.isChecked()))
 
         #EXEC KUF
-        self.kuf_start.clicked.connect(self.OPENFILE)
+        self.kuf_start.clicked.connect(lambda: self.OPENFILE('"C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Phantagram\Kingdom Under Fire\Kingdom Under Fire.lnk"'))
 
 
-    def OPENFILE(self):
-        self.filepath = '"C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Phantagram\Kingdom Under Fire\Kingdom Under Fire.lnk"'
-        os.system(self.filepath)
+    def OPENFILE(self, filepath):
+        os.system(filepath)
 
     def GOOGLESHEET(self):
         self.scope = [
@@ -100,14 +99,46 @@ class WindowClass(QMainWindow, form_class) :
                 break
             self.kuf_map.addItem(self.cell.value)
 
+        #유저확인
+    def FIND_USER(self,username):
+        #self.checkusername=self.kuf_myname.text()
+        self.checkusername = username
+        self.kuf_userlist = self.kuf_worksheet_rank.range('A2:A100')
+        self.cnt = 0
+        self.chk = 0
+        for self.user in self.kuf_userlist:
+            print("검색중" , self.cnt,self.user,self.checkusername)
+            
+            if ( self.user.value == self.checkusername):
+                print("찾았음 : ", self.user.value, self.checkusername)
+                self.chk = 1
+                break
+            else:
+                print("유저 없음", self.chk)
+            self.cnt+=1
+        print("검색 끝")
+        if(self.chk == 0):
+            print(type(self.checkusername))
+            self.kuf_worksheet_rank.append_row([self.checkusername])
+            #slef.kuf_worksheet_rank.
+            print("사용자 추가")
+        else:
+            print("이미 있는 사용자입니다. : ",self.chk)
+        
+
+
+
 
     def RANK_UPDATE(self, game, myrace, myname,yourname, yourace, gamemap,outcome) :
         if outcome == True :
-            self.kuf_worksheet_history.update_cells('B16',['',self.today, gamemap,1500,myrace, myname, yourname, yourace,1500, '=K7-D7'])
-            #self.kuf_worksheet_history.append_row(['',self.today, gamemap,1500,myrace, myname, yourname, yourace,1500, =K7-D7])
+            self.kuf_worksheet_history.append_row(['',self.today, gamemap,1500,myrace, myname, yourname, yourace,1500, ])
+            self.FIND_USER(myname)
+            self.FIND_USER(yourname)
             print("승리")
         elif outcome == False :
-            self.kuf_worksheet_history.append_row(['',self.today, gamemap, '1500',yourace, yourname, myname, myrace])
+            self.kuf_worksheet_history.append_row(['',self.today, gamemap, 1500,yourace, yourname, myname, myrace, 1500])
+            self.FIND_USER(myname)
+            self.FIND_USER(yourname)
             print("패배")
 
 
@@ -141,10 +172,10 @@ class WindowClass(QMainWindow, form_class) :
             self.newmyth_frame.setGeometry(250, 65, 491, 1)
             self.imjinrok_frame.setGeometry(250, 65, 491, 1)
             self.atrox_frame.setGeometry(250, 65, 491, 1)
-            self.jurrasic_frame.setGeometry(250, 65, 491, 321)
+            self.jurrasic_frame.setGeometry(250, 65, 491, 401)
     def KUF_FRAME(self) :
             print("킹덤언더파이어")
-            self.kuf_frame.setGeometry(250, 65, 491, 321)
+            self.kuf_frame.setGeometry(250, 65, 491, 401)
             self.mirror_frame.setGeometry(250, 65, 491, 1)
             self.newmyth_frame.setGeometry(250, 65, 491, 1)
             self.imjinrok_frame.setGeometry(250, 65, 491, 1)
@@ -155,21 +186,21 @@ class WindowClass(QMainWindow, form_class) :
         self.kuf_frame.setGeometry(250, 65, 491, 1)
         self.mirror_frame.setGeometry(250, 65, 491, 1)
         self.newmyth_frame.setGeometry(250, 65, 491, 1)
-        self.imjinrok_frame.setGeometry(250, 65, 491, 321)
+        self.imjinrok_frame.setGeometry(250, 65, 491, 401)
         self.atrox_frame.setGeometry(250, 65, 491, 1)
         self.jurrasic_frame.setGeometry(250, 65, 491, 1)
     def NEWMYTH_FRAME(self) :
         print("신천년의신화")
         self.kuf_frame.setGeometry(250, 65, 491, 1)
         self.mirror_frame.setGeometry(250, 65, 491, 1)
-        self.newmyth_frame.setGeometry(250, 65, 491, 321)
+        self.newmyth_frame.setGeometry(250, 65, 491, 401)
         self.imjinrok_frame.setGeometry(250, 65, 491, 1)
         self.atrox_frame.setGeometry(250, 65, 491, 1)
         self.jurrasic_frame.setGeometry(250, 65, 491, 1)
     def MIRRORWAR_FRAME(self) :
         print("거울전쟁")
         self.kuf_frame.setGeometry(250, 65, 491, 1)
-        self.mirror_frame.setGeometry(250, 65, 491, 321)
+        self.mirror_frame.setGeometry(250, 65, 491, 401)
         self.newmyth_frame.setGeometry(250, 65, 491, 1)
         self.imjinrok_frame.setGeometry(250, 65, 491, 1)
         self.atrox_frame.setGeometry(250, 65, 491, 1)
@@ -180,7 +211,7 @@ class WindowClass(QMainWindow, form_class) :
         self.mirror_frame.setGeometry(250, 65, 491, 1)
         self.newmyth_frame.setGeometry(250, 65, 491, 1)
         self.imjinrok_frame.setGeometry(250, 65, 491, 1)
-        self.atrox_frame.setGeometry(250, 65, 491, 321)
+        self.atrox_frame.setGeometry(250, 65, 491, 401)
         self.jurrasic_frame.setGeometry(250, 65, 491, 1)
 
 

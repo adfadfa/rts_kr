@@ -11,7 +11,7 @@ from PyQt5.QtWidgets import *
 from PyQt5 import uic
 
 
-form_class = uic.loadUiType("rts_kr.ui")[0]
+form_class = uic.loadUiType("C:\\Users\\seo\\AndroidStudioProjects\\rts_kr\\python\\rts_kr.ui")[0]
 
 class WindowClass(QMainWindow, form_class) :
     def __init__(self) :
@@ -70,7 +70,7 @@ class WindowClass(QMainWindow, form_class) :
         self.kuf_update.clicked.connect(lambda : self.RANK_UPDATE('kuf', self.kuf_myrace.currentText(), self.kuf_myname.text(), self.kuf_yourname.text(), self.kuf_yourace.currentText(), self.kuf_map.currentText(), self.kuf_win.isChecked()))
 
         #EXEC KUF
-        self.kuf_start.clicked.connect(lambda: self.OPENFILE('"C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Phantagram\Kingdom Under Fire\Kingdom Under Fire.lnk"'))
+        self.kuf_start.clicked.connect(lambda: self.OPENFILE('"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Phantagram\\Kingdom Under Fire\\Kingdom Under Fire.lnk"'))
 
 
     def OPENFILE(self, filepath):
@@ -139,18 +139,15 @@ class WindowClass(QMainWindow, form_class) :
             self.myrating = self.kuf_worksheet_rank.cell(self.findmyname.row, self.findmyname.col+4).value
             self.findyourname = self.kuf_worksheet_rank.find(yourname)
             self.yourating = self.kuf_worksheet_rank.cell(self.findyourname.row, self.findyourname.col+4).value
-            try:
-                self.aftermyrating= float(self.myrating)+64*(1-1/(1+10%((float(self.yourating)-float(self.myrating))/400)))
-            except ZeroDivisionError:
-                print("ZeroDivisionError")
+
+            self.aftermyrating= float(self.myrating)+64*(1-1/(1+10**((float(self.yourating)-float(self.myrating))/400)))
+
             
             print(float(self.yourating),"+32*(0-1/(1+10%((", float(self.myrating)-float(self.yourating),")/400)))")
             
 
-            try:
-                self.afteryourating = float(self.yourating)+32*(0-1/(1+10%((float(self.myrating)-float(self.yourating))/400)))
-            except ZeroDivisionError:
-                print("ZeroDivisionError")
+            self.afteryourating = float(self.yourating)+32*(0-1/(1+10**((float(self.myrating)-float(self.yourating))/400)))
+
             self.fluctmyrating= float(self.aftermyrating) - float(self.myrating)
             self.fluctyourating= float(self.afteryourating) - float(self.yourating)
 
@@ -162,14 +159,14 @@ class WindowClass(QMainWindow, form_class) :
             #update current rating
             self.kuf_worksheet_rank.update('E'+str(self.findmyname.row), self.aftermyrating)
             self.kuf_worksheet_rank.update('E'+str(self.findyourname.row), self.afteryourating)
-
+            self.kuf_worksheet_rank.update('F6', '')
 
             ##update current rating
             
 
             print("승리")
         elif outcome == False :
-            self.kuf_worksheet_history.append_row(['',self.today, gamemap, self.yourating, yourace, yourname, myname, myrace, self.myrating, self.fluctyourating, self.afteryourating, self.aftermyrating, self.fluctmyrating])
+            self.kuf_worksheet_history.append_row(['ddd',self.today, gamemap, self.yourating, yourace, yourname, myname, myrace, self.myrating, self.fluctyourating, self.afteryourating, self.aftermyrating, self.fluctmyrating])
             self.FIND_USER(myname)
             self.FIND_USER(yourname)
             print("패배")

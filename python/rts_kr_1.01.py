@@ -128,48 +128,89 @@ class WindowClass(QMainWindow, form_class) :
 
 
     def RANK_UPDATE(self, game, myrace, myname,yourname, yourace, gamemap,outcome) :
+        #ragistry user
+        self.FIND_USER(myname)
+        self.FIND_USER(yourname)
+
+        # if outcome == True :
+        # find before rating point
+        self.findmyname = self.kuf_worksheet_rank.find(myname)
+        self.myrating = self.kuf_worksheet_rank.cell(self.findmyname.row, self.findmyname.col+4).value
+        self.findyourname = self.kuf_worksheet_rank.find(yourname)
+        self.yourating = self.kuf_worksheet_rank.cell(self.findyourname.row, self.findyourname.col+4).value
+        # Calculate after rating
+        self.aftermyrating= float(self.myrating)+64*(1-1/(1+10**((float(self.yourating)-float(self.myrating))/400)))  
+        self.afteryourating = float(self.yourating)+32*(0-1/(1+10**((float(self.myrating)-float(self.yourating))/400)))
+        self.fluctmyrating= float(self.aftermyrating) - float(self.myrating)
+        self.fluctyourating= float(self.afteryourating) - float(self.yourating)
+
+        #print("나의 이전레이팅",self.myrating,"이후레이팅:",int(self.aftermyrating))
+        #print("레이팅은 %s행%s열" % (self.findmyname.row, self.findmyname.col+4))
+
+            
+        #self.kuf_worksheet_history.append_row([' ',self.today, gamemap,self.myrating, myrace, myname, yourname, yourace, self.yourating, self.fluctmyrating, self.aftermyrating, self.afteryourating, self.fluctyourating])
+        #print("업데이트할 현재레이팅위치", self.findmyname.row, self.findmyname.col+4,'E'+str(self.findmyname.row) )
+        #self.kuf_worksheet_history.update_cell(행,열,'=SUM(1+1)')
+        
         if outcome == True :
-
-            #ragistry user
-            self.FIND_USER(myname)
-            self.FIND_USER(yourname)
-
-            #find before rating point
-            self.findmyname = self.kuf_worksheet_rank.find(myname)
-            self.myrating = self.kuf_worksheet_rank.cell(self.findmyname.row, self.findmyname.col+4).value
-            self.findyourname = self.kuf_worksheet_rank.find(yourname)
-            self.yourating = self.kuf_worksheet_rank.cell(self.findyourname.row, self.findyourname.col+4).value
-
-            self.aftermyrating= float(self.myrating)+64*(1-1/(1+10**((float(self.yourating)-float(self.myrating))/400)))
-
-            
-            print(float(self.yourating),"+32*(0-1/(1+10%((", float(self.myrating)-float(self.yourating),")/400)))")
-            
-
-            self.afteryourating = float(self.yourating)+32*(0-1/(1+10**((float(self.myrating)-float(self.yourating))/400)))
-
-            self.fluctmyrating= float(self.aftermyrating) - float(self.myrating)
-            self.fluctyourating= float(self.afteryourating) - float(self.yourating)
-
-            print("나의 이전레이팅",self.myrating,"이후레이팅:",int(self.aftermyrating))
-            print("레이팅은 %s행%s열" % (self.findmyname.row, self.findmyname.col+4))
-
-            self.kuf_worksheet_history.append_row(['',self.today, gamemap,self.myrating, myrace, myname, yourname, yourace, self.yourating, self.fluctmyrating, self.aftermyrating, self.afteryourating, self.fluctyourating ])
-            print("업데이트할 현재레이팅위치", self.findmyname.row, self.findmyname.col+4,'E'+str(self.findmyname.row) )
-            #update current rating
-            self.kuf_worksheet_rank.update('E'+str(self.findmyname.row), self.aftermyrating)
-            self.kuf_worksheet_rank.update('E'+str(self.findyourname.row), self.afteryourating)
-            self.kuf_worksheet_rank.update('F6', '')
-
-            ##update current rating
-            
+            #check , is update row line emty?
+            #print("중요한 시간!")
+            self.cell_list = self.kuf_worksheet_history.range('B2:B1000') #히스토리삽입 할 곳 범위지넝
+            for self.cell in self.cell_list: # 맵리스트 출력
+                if self.cell.value == '':
+                    print("승자전적 처리중")
+                    self.kuf_worksheet_history.update_cell(self.cell.row,2, self.today)
+                    self.kuf_worksheet_history.update_cell(self.cell.row,3, gamemap)
+                    self.kuf_worksheet_history.update_cell(self.cell.row,4, self.myrating)
+                    self.kuf_worksheet_history.update_cell(self.cell.row,5, myrace)
+                    self.kuf_worksheet_history.update_cell(self.cell.row,6, myname)
+                    self.kuf_worksheet_history.update_cell(self.cell.row,7, yourname)
+                    self.kuf_worksheet_history.update_cell(self.cell.row,8, yourace)
+                    self.kuf_worksheet_history.update_cell(self.cell.row,9, self.yourating)
+                    self.kuf_worksheet_history.update_cell(self.cell.row,10, self.fluctmyrating)
+                    self.kuf_worksheet_history.update_cell(self.cell.row,11, self.aftermyrating)
+                    self.kuf_worksheet_history.update_cell(self.cell.row,12, self.afteryourating)
+                    self.kuf_worksheet_history.update_cell(self.cell.row,13, self.fluctyourating)
+                    break
 
             print("승리")
         elif outcome == False :
-            self.kuf_worksheet_history.append_row(['ddd',self.today, gamemap, self.yourating, yourace, yourname, myname, myrace, self.myrating, self.fluctyourating, self.afteryourating, self.aftermyrating, self.fluctmyrating])
-            self.FIND_USER(myname)
-            self.FIND_USER(yourname)
+            #self.kuf_worksheet_history.append_row(['',self.today, gamemap, self.yourating, yourace, yourname, myname, myrace, self.myrating, self.fluctyourating, self.afteryourating, self.aftermyrating, self.fluctmyrating])
+            self.cell_list = self.kuf_worksheet_history.range('B2:B1000') #히스토리삽입 할 곳 범위지넝
+            for self.cell in self.cell_list: # 맵리스트 출력
+                if self.cell.value == '':
+                    print("패자전적 처리중")
+                    self.kuf_worksheet_history.update_cell(self.cell.row,2, self.today)
+                    self.kuf_worksheet_history.update_cell(self.cell.row,3, gamemap)
+                    self.kuf_worksheet_history.update_cell(self.cell.row,4, self.yourating)
+                    self.kuf_worksheet_history.update_cell(self.cell.row,5, yourace)
+                    self.kuf_worksheet_history.update_cell(self.cell.row,6, yourname)
+                    self.kuf_worksheet_history.update_cell(self.cell.row,7, myname)
+                    self.kuf_worksheet_history.update_cell(self.cell.row,8, myrace)
+                    self.kuf_worksheet_history.update_cell(self.cell.row,9, self.myrating)
+                    self.kuf_worksheet_history.update_cell(self.cell.row,10, self.fluctyourating)
+                    self.kuf_worksheet_history.update_cell(self.cell.row,11, self.afteryourating)
+                    self.kuf_worksheet_history.update_cell(self.cell.row,12, self.aftermyrating)
+                    self.kuf_worksheet_history.update_cell(self.cell.row,13, self.fluctmyrating)
+                    break
             print("패배")
+
+        #update current rating info
+        self.kuf_worksheet_rank.update_cell(self.findmyname.row, 2, "=COUNTIF('전적히스토리'!F:F," +'"' + myname + '")')#승자 승리
+        self.kuf_worksheet_rank.update_cell(self.findmyname.row, 3, "=COUNTIF('전적히스토리'!G:G," +'"' + myname + '")')#승자 패배
+        self.test='=IFERROR(B' + str(self.findmyname.row)
+        print("확인중 :", self.test)
+        self.kuf_worksheet_rank.update_cell(self.findmyname.row, 4, '=IFERROR(B'+ str(self.findmyname.row) + '/(B' + str(self.findmyname.row) + '+C' + str(self.findmyname.row) + '),"")') #승자 승률
+
+        #self.kuf_worksheet_rank.cell(self.findmyname.row,4, )
+
+
+        self.kuf_worksheet_rank.update_cell(str(self.findmyname.row),5, self.aftermyrating)
+
+
+
+
+        self.kuf_worksheet_rank.update('E'+str(self.findyourname.row), self.afteryourating)
 
 
     def CHANGE_MYNAME(self):

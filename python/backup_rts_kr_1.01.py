@@ -99,40 +99,39 @@ class WindowClass(QMainWindow, form_class) :
                 break
             self.kuf_map.addItem(self.cell.value)
 
-    #유저확인
+        #유저확인
     def FIND_USER(self,username):
         #self.checkusername=self.kuf_myname.text()
         self.checkusername = username
         self.kuf_userlist = self.kuf_worksheet_rank.range('A2:A100')
-        self.cnt = 0
-        self.chk = 0
+        self.userchk = 0 #기존유저가 있는지 유저 유무
+        
         for self.user in self.kuf_userlist:
-            #print("검색중" , self.cnt,self.user,self.checkusername)
-            
             if ( self.user.value == self.checkusername):
                 print("찾았음 : ", self.user.value, self.checkusername)
-                self.chk = 1
+                self.userchk = 1
                 break
             else:
-                print("유저 없음", self.chk)
-            self.cnt+=1
-        #print("검색 끝")
-
-        if(self.chk == 0):
+                print("유저 없음", self.userchk)
+        print("유저검색/등록 끝")
+        if(self.userchk == 0):
             print(type(self.checkusername))
-            #self.kuf_worksheet_rank.append_row([self.checkusername,'','','',1500])
-            self.cell_list = self.kuf_worksheet_rank.range('A2:A1000') #유저 리스트 범위 지정
-            for self.cell in self.cell_list: # 유저 리스트 반복문
-                if self.cell.value == '':
-                    print("유저 최초 등록 : ",self.checkusername)
-                    self.kuf_worksheet_rank.update_cell(self.cell.row,1, self.checkusername)
-                    self.kuf_worksheet_rank.update_cell(self.cell.row,5, 1500)
-                    break
-            print("패배")
+            self.kuf_worksheet_rank.append_row([self.checkusername,'','','',1500])
+            #slef.kuf_worksheet_rank.
             print("사용자 추가")
         else:
-            print("이미 있는 사용자입니다. : ",self.chk)
+            print("이미 있는 사용자입니다. : ",self.userchk)
         
+    def COUNT_USER(self) :
+        self.user_list = self.kuf_worksheet_rank.range('A2:A100') #유저리스트 범위 지정
+        self.usercnt = 0 #총 유저수 카운트
+        for self.user in self.kuf_userlist:
+            self.usercnt +=1
+            if self.user.value == '' :
+                print("유저 수는", self.usercnt)
+                break
+
+
 
 
     def RANK_UPDATE(self, game, myrace, myname,yourname, yourace, gamemap,outcome) :
@@ -140,6 +139,8 @@ class WindowClass(QMainWindow, form_class) :
         self.FIND_USER(myname)
         self.FIND_USER(yourname)
 
+        #count totaluser
+        self.COUNT_USER()
         # if outcome == True :
         # find before rating point
         self.findmyname = self.kuf_worksheet_rank.find(myname)
@@ -206,23 +207,26 @@ class WindowClass(QMainWindow, form_class) :
         #update current rating info
         self.kuf_worksheet_rank.update_cell(self.findmyname.row, 2, "=COUNTIF('전적히스토리'!F:F," +'"' + myname + '")')#승자 승리
         self.kuf_worksheet_rank.update_cell(self.findmyname.row, 3, "=COUNTIF('전적히스토리'!G:G," +'"' + myname + '")')#승자 패배
-        self.kuf_worksheet_rank.update_cell(self.findmyname.row, 4, '=IFERROR(B'+ str(self.findmyname.row) + '/(B' + str(self.findmyname.row) + '+C' + str(self.findmyname.row) + '),"")') #승자 승률
-        self.kuf_worksheet_rank.update_cell(str(self.findmyname.row),5, self.aftermyrating)
-        self.kuf_worksheet_rank.update_cell(str(self.findmyname.row), 6, '=RANK(E' + str(self.findmyname.row) + ',E:E,0)') #승자 순위
+        # =IF(F8/COUNTA(A$2:A)*100 < 16,"S", IF(F8/COUNTA(A$2:A)*100 < 30,"A",IF(F8/COUNTA(A$2:A)*100 < 44, "B",IF(F8/COUNTA(A$2:A)*100 < 59,"C",IF(F8/COUNTA(A$2:A)*100 < 73,"D",IF(F8/COUNTA(A$2:A)*100 < 87,"E","F"))))))
+        #self.myrank= '='+'IF(F' + str(self.findmyname.row) + '/COUNTA(A$2:A)*100'
+
+       # self.test= self.myrank + '< 16,"S", ' + self.myrank + ' < 30,"A", ' + self.myrank + ' < 30,"B", ' + self.myrank + ' < 30,"C", ' +  self.myrank + ' < 30,"D", ' +  self.myrank + ' < 30,"E", "F"))))))'
         
-        self.myrank= 'IF(F' + str(self.findmyname.row) + '/COUNTA(A$2:A)*100'
-        self.test = '=' + self.myrank + '< 16,"S", ' + self.myrank + ' < 30,"A", ' + self.myrank + ' < 44,"B", ' + self.myrank + ' < 59,"C", ' +  self.myrank + ' < 72,"D", ' +  self.myrank + ' < 86,"E", "F"))))))'
-        print("확인중 :", self.test)
-        self.kuf_worksheet_rank.update_cell(self.findmyname.row, 7, self.test)
+        #print("확인중 :", self.test)
+        self.kuf_worksheet_rank.update_cell(self.findmyname.row, 4, '=IFERROR(B'+ str(self.findmyname.row) + '/(B' + str(self.findmyname.row) + '+C' + str(self.findmyname.row) + '),"")') #승자 승률
+
         #self.kuf_worksheet_rank.cell(self.findmyname.row,4, )
 
 
-
-
+        self.kuf_worksheet_rank.update_cell(str(self.findmyname.row),5, self.aftermyrating) #승자 레이팅
+        self.kuf_worksheet_history.update_cell(str(self.findmyname.row), 6, '=RANK(F' + str(self.findmyname.row) + ',E:E,0)') #승자 순위
+        
+        
 
 
 
         self.kuf_worksheet_rank.update('E'+str(self.findyourname.row), self.afteryourating)
+        print("처리완료")
 
 
     def CHANGE_MYNAME(self):
@@ -296,10 +300,7 @@ class WindowClass(QMainWindow, form_class) :
         self.imjinrok_frame.setGeometry(250, 65, 491, 1)
         self.atrox_frame.setGeometry(250, 65, 491, 401)
         self.jurrasic_frame.setGeometry(250, 65, 491, 1)
-    
-    print("기록 정상 종료")
-    
-    
+
 
 
 if __name__ == "__main__" :

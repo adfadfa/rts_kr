@@ -6,16 +6,16 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1860</width>
-    <height>1089</height>
+    <width>1857</width>
+    <height>985</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>RTS.KR_1.00</string>
+   <string>RTS.KR_1.01</string>
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>그림1.jpg</normaloff>그림1.jpg</iconset>
+    <normaloff>seo.jpg</normaloff>seo.jpg</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="Line" name="line">
@@ -107,13 +107,14 @@
       <property name="geometry">
        <rect>
         <x>330</x>
-        <y>14</y>
+        <y>20</y>
         <width>101</width>
         <height>91</height>
        </rect>
       </property>
       <property name="text">
-       <string>업데이트</string>
+       <string>전적
+업데이트</string>
       </property>
      </widget>
      <widget class="QComboBox" name="kuf_myrace">
@@ -380,7 +381,7 @@
       </rect>
      </property>
      <property name="title">
-      <string>현재: 나의 랭킹</string>
+      <string>현재: 나의 전적</string>
      </property>
      <widget class="QLabel" name="kuf_myrank">
       <property name="geometry">
@@ -444,7 +445,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>그림1.jpg</normaloff>그림1.jpg</iconset>
+         <normaloff>seo.jpg</normaloff>seo.jpg</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -677,7 +678,8 @@
        </rect>
       </property>
       <property name="text">
-       <string>업데이트</string>
+       <string>전적
+업데이트</string>
       </property>
      </widget>
      <widget class="QComboBox" name="imjinrok_myrace">
@@ -713,6 +715,12 @@
         <width>91</width>
         <height>20</height>
        </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
       </property>
      </widget>
      <widget class="QLineEdit" name="imjinrok_yourname">
@@ -1027,7 +1035,8 @@
        </rect>
       </property>
       <property name="text">
-       <string>업데이트</string>
+       <string>전적
+업데이트</string>
       </property>
      </widget>
      <widget class="QComboBox" name="newmyth_myrace">
@@ -1363,7 +1372,8 @@
        </rect>
       </property>
       <property name="text">
-       <string>업데이트</string>
+       <string>전적
+업데이트</string>
       </property>
      </widget>
      <widget class="QComboBox" name="mirrorwar_myrace">
@@ -1699,7 +1709,8 @@
        </rect>
       </property>
       <property name="text">
-       <string>업데이트</string>
+       <string>전적
+업데이트</string>
       </property>
      </widget>
      <widget class="QComboBox" name="jurassic_myrace">
@@ -2074,7 +2085,8 @@
        </rect>
       </property>
       <property name="text">
-       <string>업데이트</string>
+       <string>전적
+업데이트</string>
       </property>
      </widget>
      <widget class="QComboBox" name="atrox_myrace">
@@ -2363,13 +2375,16 @@
       <height>20</height>
      </rect>
     </property>
+    <property name="text">
+     <string/>
+    </property>
    </widget>
    <widget class="QLabel" name="kuf_ip_4">
     <property name="geometry">
      <rect>
-      <x>470</x>
+      <x>440</x>
       <y>40</y>
-      <width>41</width>
+      <width>71</width>
       <height>21</height>
      </rect>
     </property>
@@ -2377,7 +2392,7 @@
      <enum>QFrame::NoFrame</enum>
     </property>
     <property name="text">
-     <string>닉네임</string>
+     <string>카톡 닉네임</string>
     </property>
    </widget>
    <widget class="QPushButton" name="global_myip">
@@ -2399,7 +2414,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1860</width>
+     <width>1857</width>
      <height>21</height>
     </rect>
    </property>

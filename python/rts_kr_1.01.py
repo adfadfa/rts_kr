@@ -1,3 +1,5 @@
+import pywintypes
+import win32api
 import webbrowser
 import socket
 import sys

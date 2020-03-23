@@ -19,7 +19,7 @@ from PyQt5 import uic
 
 
 
-form_class = uic.loadUiType("C:\\Users\\seo\\AndroidStudioProjects\\rts_kr\\python\\rts_kr.ui")[0]
+#form_class = uic.loadUiType("C:\\Users\\seo\\AndroidStudioProjects\\rts_kr\\python\\rts_kr.ui")[0]
 
 
 class WindowClass(QMainWindow, form_class) :

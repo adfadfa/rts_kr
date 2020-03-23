@@ -503,7 +503,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>NoCD_TheRanker_1_101.ico</normaloff>NoCD_TheRanker_1_101.ico</iconset>
+         <normaloff>NoCD_TheRanker_101.ico</normaloff>NoCD_TheRanker_101.ico</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -523,7 +523,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>뙉뷥_207.ico</normaloff>뙉뷥_207.ico</iconset>
+         <normaloff>imjinrok.ico</normaloff>imjinrok.ico</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -543,7 +543,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>뙉뷥_1_207.ico</normaloff>뙉뷥_1_207.ico</iconset>
+         <normaloff>newmyth.ico</normaloff>newmyth.ico</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -927,7 +927,7 @@
      </property>
      <property name="icon">
       <iconset>
-       <normaloff>뙉뷥_207.ico</normaloff>뙉뷥_207.ico</iconset>
+       <normaloff>imjinrok.ico</normaloff>imjinrok.ico</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -1264,7 +1264,7 @@
      </property>
      <property name="icon">
       <iconset>
-       <normaloff>뙉뷥_1_207.ico</normaloff>뙉뷥_1_207.ico</iconset>
+       <normaloff>newmyth.ico</normaloff>newmyth.ico</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -1977,7 +1977,7 @@
      </property>
      <property name="icon">
       <iconset>
-       <normaloff>NoCD_TheRanker_1_101.ico</normaloff>NoCD_TheRanker_1_101.ico</iconset>
+       <normaloff>NoCD_TheRanker_101.ico</normaloff>NoCD_TheRanker_101.ico</iconset>
      </property>
      <property name="iconSize">
       <size>

@@ -7,7 +7,7 @@ from collections import namedtuple
 #>>>>>>> parent of b6c8685... 빌딩에러잡는중:python/rts_kr_1.01.py
 import webbrowser
 import socket
-import sys, RTS_kr_ui
+import sys
 import pyperclip
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
@@ -19,10 +19,10 @@ from PyQt5 import uic
 
 
 
-#form_class = uic.loadUiType("C:\\Users\\seo\\AndroidStudioProjects\\rts_kr\\python\\rts_kr.ui")[0]
+form_class = uic.loadUiType(".\config\\rts_kr.ui")[0]
 
 
-class WindowClass(QMainWindow, RTS_kr_ui.Ui_MainWindow) :
+class WindowClass(QMainWindow, form_class) :
     def __init__(self) :
         super().__init__()
         self.setupUi(self)
@@ -189,8 +189,7 @@ class WindowClass(QMainWindow, RTS_kr_ui.Ui_MainWindow) :
                     'https://spreadsheets.google.com/feeds',
                     'https://www.googleapis.com/auth/drive',
                     ]
-
-        self.json_file_name = 'C:\\Users\\seo\\AndroidStudioProjects\\rts_kr\\python\\kufrankingsystem-281378b273ea.py'
+        self.json_file_name = '.\\config\\kufrankingsystem-281378b273ea.py'
         self.credentials = ServiceAccountCredentials.from_json_keyfile_name(self.json_file_name, self.scope)
         
         self.gc = gspread.authorize(self.credentials)

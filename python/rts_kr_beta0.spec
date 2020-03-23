@@ -3,7 +3,7 @@
 block_cipher = None
 
 
-a = Analysis(['rts_kr_1.01.py'],
+a = Analysis(['rts_kr_beta0.py'],
              pathex=['C:\\Users\\seo\\AndroidStudioProjects\\rts_kr\\python'],
              binaries=[],
              datas=[],
@@ -23,11 +23,11 @@ exe = EXE(pyz,
           a.zipfiles,
           a.datas,
           [],
-          name='rts_kr_1.01',
+          name='rts_kr_beta0',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
           upx_exclude=[],
           runtime_tmpdir=None,
-          console=True , icon='seo.ico')
+          console=True , icon='config\\seo.ico')

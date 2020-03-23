@@ -1,7 +1,10 @@
+<<<<<<< HEAD:python/rts_kr_beta.py
 #import pywintypes
 #import win32api
 import json
 from collections import namedtuple
+=======
+>>>>>>> parent of b6c8685... 빌딩에러잡는중:python/rts_kr_1.01.py
 import webbrowser
 import socket
 import sys, RTS_kr_ui
@@ -16,10 +19,10 @@ from PyQt5 import uic
 
 
 
-form_class = uic.loadUiType("C:\\Users\\seo\\AndroidStudioProjects\\rts_kr\\python\\rts_kr.ui")[0]
+#form_class = uic.loadUiType("C:\\Users\\seo\\AndroidStudioProjects\\rts_kr\\python\\rts_kr.ui")[0]
 
 
-class WindowClass(QMainWindow, form_class) :
+class WindowClass(QMainWindow, RTS_kr_ui.Ui_MainWindow) :
     def __init__(self) :
         super().__init__()
         self.setupUi(self)
@@ -187,7 +190,7 @@ class WindowClass(QMainWindow, form_class) :
                     'https://www.googleapis.com/auth/drive',
                     ]
 
-       self.json_file_name = 'C:\\Users\\seo\\AndroidStudioProjects\\rts_kr\\pythonkufrankingsystem-281378b273ea.json'
+       #self.json_file_name = 'kufrankingsystem-281378b273ea.json'
         self.credentials = ServiceAccountCredentials.from_json_keyfile_name(self.json_file_name, self.scope)
         
         self.gc = gspread.authorize(self.credentials)

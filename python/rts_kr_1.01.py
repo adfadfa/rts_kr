@@ -19,16 +19,13 @@ from PyQt5 import uic
 
 
 
-#form_class = uic.loadUiType("C:\\Users\\seo\\AndroidStudioProjects\\rts_kr\\python\\rts_kr.ui")[0]
+form_class = uic.loadUiType("C:\\Users\\seo\\AndroidStudioProjects\\rts_kr\\python\\rts_kr.ui")[0]
 
 
-class WindowClass(QMainWindow, RTS_kr_ui.Ui_MainWindow) :
+class WindowClass(QMainWindow, form_class) :
     def __init__(self) :
         super().__init__()
         self.setupUi(self)
-        
-
-
         
 
         #창고정
@@ -190,7 +187,8 @@ class WindowClass(QMainWindow, RTS_kr_ui.Ui_MainWindow) :
                     'https://www.googleapis.com/auth/drive',
                     ]
 
-        self.json_file_name = 'C:\\Users\\seo\\AndroidStudioProjects\\rts_kr\\python\\kufrankingsystem-281378b273ea.py'
+        self.json_file_name = 'C:\\Users\\seo\\AndroidStudioProjects\\rts_kr\\python\\kufrankingsystem-281378b273ea.json'
+        #self.json_file_name = 'C:\\Users\\seo\\Downloads\\mobile-master\\python\\kufrankingsystem-281378b273ea.json'
         self.credentials = ServiceAccountCredentials.from_json_keyfile_name(self.json_file_name, self.scope)
         
         self.gc = gspread.authorize(self.credentials)

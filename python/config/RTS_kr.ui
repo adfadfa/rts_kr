@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1857</width>
-    <height>985</height>
+    <height>1078</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -396,7 +396,10 @@
        <enum>QFrame::NoFrame</enum>
       </property>
       <property name="text">
-       <string>현재순위 : 1위(1%) | 닉네임 : 서네떡 |  랭크: A(1988) | 전적 : 13승 2패(87%)</string>
+       <string>실행 후, 정보갱신버튼을 누르면 전적이 갱신됩니다.</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </widget>
@@ -2407,6 +2410,63 @@
     <property name="text">
      <string/>
     </property>
+   </widget>
+   <widget class="QPushButton" name="global_refresh">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>39</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>정보갱신</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="loading_frame">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>920</y>
+      <width>311</width>
+      <height>92</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_14">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>업데이트 중..</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QProgressBar" name="progressBar">
+       <property name="autoFillBackground">
+        <bool>true</bool>
+       </property>
+       <property name="value">
+        <number>24</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
